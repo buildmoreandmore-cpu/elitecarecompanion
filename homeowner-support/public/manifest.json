@@ -1,0 +1,26 @@
+{
+  "name": "Homeowner Support - Foreclosure Prevention Services",
+  "short_name": "Homeowner Support",
+  "description": "Expert foreclosure prevention and homeowner assistance. Stop foreclosure in 24 hours.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["finance", "business"],
+  "lang": "en-US"
+}
