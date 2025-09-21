@@ -37,7 +37,6 @@ export default function EquityLoansPage() {
         body: JSON.stringify({
           service: 'Equity Loans',
           helpType: 'Home equity loan application',
-          timeframe: formData.timeframe,
           ...formData
         }),
       });
