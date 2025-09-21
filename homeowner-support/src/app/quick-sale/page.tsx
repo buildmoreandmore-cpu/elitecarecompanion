@@ -37,7 +37,6 @@ export default function QuickSalePage() {
         body: JSON.stringify({
           service: 'Quick Sale',
           helpType: 'Fast cash offer for home',
-          timeframe: formData.timeframe,
           ...formData
         }),
       });
