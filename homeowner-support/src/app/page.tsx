@@ -605,17 +605,13 @@ export default function Home() {
               standing by to provide immediate assistance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 flex items-center">
+              <a href="tel:7707522509" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 flex items-center">
                 <span className="mr-2">📞</span>
-                Call Now: (555) 123-4567
-              </button>
-              <button className="border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 flex items-center">
-                <span className="mr-2">💬</span>
-                Start Live Chat
-              </button>
-              <button className="text-blue-900 font-semibold hover:underline flex items-center">
+                Call Now: (770) 752-2509
+              </a>
+              <a href="tel:7707522509" className="text-blue-900 font-semibold hover:underline flex items-center">
                 Book Free Consultation →
-              </button>
+              </a>
             </div>
             <p className="text-sm text-gray-500">
               Available 24/7 • No obligation consultation • Licensed professionals • Confidential service
