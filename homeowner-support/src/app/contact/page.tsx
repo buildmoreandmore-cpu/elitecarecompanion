@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AddressInput from "../../components/AddressInput";
+import Footer from "../../components/Footer";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -286,14 +287,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-blue-200">
-            © 2024 Homeowner Support. All rights reserved. | Licensed Real Estate & Financial Professionals
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

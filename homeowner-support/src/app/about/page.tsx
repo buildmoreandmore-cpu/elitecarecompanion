@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 export default function AboutPage() {
   return (
@@ -164,14 +165,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-blue-200">
-            © 2024 Homeowner Support. All rights reserved. | Licensed Real Estate & Financial Professionals
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

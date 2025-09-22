@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AddressInput from "../components/AddressInput";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const jsonLd = {
@@ -623,77 +624,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Homeowner Support</h3>
-              <p className="text-blue-200 mb-6">
-                Your trusted partner in homeowner solutions. We provide expert guidance,
-                financial assistance, and peace of mind when you need it most.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <span className="mr-2">📞</span>
-                  <span>(770) 752-2509</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">✉️</span>
-                  <span>help@homeownersupport.com</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">📍</span>
-                  <span>123 Financial Plaza, Suite 200, Atlanta, GA 30309</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">🌐</span>
-                  <span>Available Nationwide</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-blue-200">
-                <li>Foreclosure Help</li>
-                <li>Mortgage Assistance</li>
-                <li>Equity Loans</li>
-                <li>Quick Sale</li>
-                <li>Owner Financing</li>
-                <li>Transitional Funding</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2 text-blue-200">
-                <li>FAQ</li>
-                <li>Success Stories</li>
-                <li>About Our Team</li>
-                <li>How It Works</li>
-                <li>Blog</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-blue-200">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Licensing</li>
-                <li>Compliance</li>
-              </ul>
-              <div className="mt-6 text-sm text-blue-200">
-                <p>Licensed Real Estate & Financial Professionals</p>
-                <p>BBB Accredited A+ Rating</p>
-                <p>Equal Housing Opportunity</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       </div>
     </>
   );
