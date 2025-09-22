@@ -6,6 +6,27 @@ import { useState } from "react";
 
 const faqs = [
   {
+    category: "Emergency Foreclosure - Atlanta, Orlando, Birmingham",
+    questions: [
+      {
+        question: "I received a foreclosure notice in Atlanta today. What should I do immediately?",
+        answer: "URGENT: Call us immediately at (770) 752-2509. In Atlanta, Georgia foreclosure laws allow 30 days to respond to a foreclosure notice. We can file emergency motions to delay the process and negotiate with your lender within 24 hours. Time is critical - don't wait."
+      },
+      {
+        question: "Can you stop a foreclosure sale scheduled for next week in Orlando?",
+        answer: "Yes! We have successfully stopped foreclosure sales even when scheduled for the following week in Orlando and throughout Florida. We can file emergency bankruptcy protection, negotiate last-minute loan modifications, or arrange quick sale options. Call (770) 752-2509 immediately."
+      },
+      {
+        question: "My sheriff sale is tomorrow in Birmingham. Is it too late?",
+        answer: "It's not too late! We've stopped sheriff sales on the day they were scheduled. In Birmingham, Alabama, we can file emergency legal documents, negotiate with lenders, or arrange immediate cash purchase. Every minute counts - call us now at (770) 752-2509."
+      },
+      {
+        question: "I'm 3 months behind on mortgage payments in Knoxville. Can you help?",
+        answer: "Absolutely! Being 3 months behind in Knoxville, Tennessee puts you at risk of foreclosure initiation, but we can help immediately. We offer emergency loan modifications, payment plans, and refinancing options specifically for Tennessee homeowners. Call (770) 752-2509 for urgent assistance."
+      }
+    ]
+  },
+  {
     category: "General",
     questions: [
       {

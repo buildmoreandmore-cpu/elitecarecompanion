@@ -97,9 +97,9 @@ export default function ForeclosureHelpPage() {
       {/* Hero Section */}
       <section className="bg-blue-900 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Get Foreclosure Help Now</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">Emergency Foreclosure Help Atlanta, Orlando, Birmingham</h1>
           <p className="text-xl text-blue-200 mb-6">
-            Stop foreclosure proceedings with expert guidance and proven strategies. We can help you keep your home.
+            URGENT: Received foreclosure notice? Stop foreclosure today in Atlanta, Orlando, Miami, Birmingham, Knoxville. Emergency assistance available 24/7. We can help you avoid sheriff sale and keep your home.
           </p>
           <div className="flex justify-center items-center space-x-6 text-blue-200">
             <div className="flex items-center">

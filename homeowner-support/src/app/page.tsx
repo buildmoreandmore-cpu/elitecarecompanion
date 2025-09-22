@@ -9,35 +9,69 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/#organization",
+        "@type": ["Organization", "LocalBusiness", "FinancialService"],
+        "@id": "https://www.homeowner-support.com/#organization",
         "name": "Homeowner Support",
-        "url": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/logo.png"
-        },
+        "url": "https://www.homeowner-support.com",
+        "description": "Emergency foreclosure help and mortgage assistance for Atlanta and Georgia homeowners. Stop foreclosure in 24 hours.",
+        "telephone": "+1-770-752-2509",
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 24:00",
+        "serviceArea": [
+          {
+            "@type": "State",
+            "name": "Georgia"
+          },
+          {
+            "@type": "State",
+            "name": "Florida"
+          },
+          {
+            "@type": "State",
+            "name": "Alabama"
+          },
+          {
+            "@type": "State",
+            "name": "Tennessee"
+          }
+        ],
+        "areaServed": [
+          "Atlanta, GA", "Alpharetta, GA", "Buckhead, GA", "East Point, GA", "McDonough, GA", "Sandy Springs, GA", "Dunwoody, GA", "Macon, GA", "Savannah, GA",
+          "Orlando, FL", "Miami, FL", "Tampa Bay, FL", "Jacksonville, FL", "Tallahassee, FL", "Gainesville, FL", "Sarasota, FL",
+          "Birmingham, AL",
+          "Hendersonville, TN", "Morristown, TN", "Johnson City, TN", "Crossville, TN", "Knoxville, TN", "McMinnville, TN", "Spring Hill, TN"
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-770-752-2509",
           "contactType": "customer service",
-          "areaServed": "US",
-          "availableLanguage": "English"
+          "areaServed": ["Atlanta", "Georgia"],
+          "availableLanguage": "English",
+          "hoursAvailable": "Mo-Su 24:00"
         },
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Financial Plaza, Suite 200",
+          "addressLocality": "Atlanta",
+          "addressRegion": "GA",
+          "postalCode": "30309",
           "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.7490",
+          "longitude": "-84.3880"
         },
         "sameAs": []
       },
       {
         "@type": "WebSite",
-        "@id": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/#website",
-        "url": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app",
+        "@id": "https://www.homeowner-support.com/#website",
+        "url": "https://www.homeowner-support.com",
         "name": "Homeowner Support",
         "description": "Expert foreclosure prevention and homeowner assistance services",
         "publisher": {
-          "@id": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/#organization"
+          "@id": "https://www.homeowner-support.com/#organization"
         }
       },
       {
@@ -45,7 +79,7 @@ export default function Home() {
         "name": "Foreclosure Prevention",
         "description": "Stop foreclosure proceedings with expert guidance and proven strategies",
         "provider": {
-          "@id": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/#organization"
+          "@id": "https://www.homeowner-support.com/#organization"
         },
         "serviceType": "Financial Service",
         "areaServed": "United States"
@@ -55,7 +89,7 @@ export default function Home() {
         "name": "Mortgage Assistance",
         "description": "Mortgage modification, refinancing, and payment relief options",
         "provider": {
-          "@id": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/#organization"
+          "@id": "https://www.homeowner-support.com/#organization"
         },
         "serviceType": "Financial Service",
         "areaServed": "United States"
@@ -65,7 +99,7 @@ export default function Home() {
         "name": "Quick Home Sale",
         "description": "Fast cash offers for homes in any condition with 24-48 hour closing",
         "provider": {
-          "@id": "https://homeowner-support-1tobgm2yy-francis-projects-cc692baf.vercel.app/#organization"
+          "@id": "https://www.homeowner-support.com/#organization"
         },
         "serviceType": "Real Estate Service",
         "areaServed": "United States"
@@ -160,11 +194,10 @@ export default function Home() {
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
                 Stop Foreclosure<br />
                 in <span className="text-blue-600">24 Hours</span><br />
-                Keep Your Home
+                Atlanta & Georgia
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Don&apos;t lose your home to foreclosure. Our expert team has helped over 1,000 homeowners avoid
-                foreclosure, negotiate with lenders, and find solutions that work.
+                URGENT: Received a foreclosure notice? Don&apos;t lose your home. Our emergency foreclosure team has helped over 1,000 Atlanta & Georgia homeowners stop foreclosure, avoid sheriff sales, and keep their homes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 flex items-center">
@@ -259,9 +292,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">🏠</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Foreclosure Help</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Emergency Foreclosure Help Atlanta</h3>
               <p className="text-gray-600 mb-6">
-                Stop foreclosure proceedings with expert guidance and proven strategies.
+                URGENT: Stop foreclosure today! Emergency assistance for Atlanta & Georgia homeowners facing foreclosure notices, sheriff sales, or court dates.
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center text-sm text-gray-600">
@@ -286,9 +319,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">💳</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Mortgage Assistance</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Mortgage Assistance Atlanta GA</h3>
               <p className="text-gray-600 mb-6">
-                Struggling with payments? We offer modification, refinancing, and relief options.
+                Can't pay mortgage this month? Behind on payments? We offer emergency modification, refinancing, and relief options for Georgia homeowners.
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center text-sm text-gray-600">
@@ -313,9 +346,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">📈</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Equity Loans</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Home Equity Loans Atlanta</h3>
               <p className="text-gray-600 mb-6">
-                Access your home equity even with poor credit. Fast approval process.
+                Bad credit equity loan Atlanta? Emergency cash from home equity even with poor credit. Fast approval process for Georgia homeowners.
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center text-sm text-gray-600">
@@ -347,9 +380,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">⚡</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Sale</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Cash House Buyers Atlanta</h3>
               <p className="text-gray-600 mb-6">
-                Get a cash offer in 24 hours. No repairs needed, fast closing guaranteed.
+                Sell house before foreclosure Atlanta! We buy houses cash Georgia - get offer in 24 hours. No repairs, fast closing guaranteed.
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center text-sm text-gray-600">
@@ -599,10 +632,9 @@ export default function Home() {
       <section className="bg-blue-900 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gray-100 rounded-lg p-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Don&apos;t Wait - Get Help Today</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Emergency Foreclosure Help - Atlanta, Orlando, Birmingham</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Every day matters when facing foreclosure or financial hardship. Our expert team is
-              standing by to provide immediate assistance.
+              URGENT: Foreclosure notice received? Every day matters! Our emergency foreclosure team serves Atlanta, Buckhead, Sandy Springs, Orlando, Miami, Tampa Bay, Birmingham, Knoxville, and surrounding areas. Licensed professionals standing by 24/7.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a href="tel:7707522509" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 flex items-center">
