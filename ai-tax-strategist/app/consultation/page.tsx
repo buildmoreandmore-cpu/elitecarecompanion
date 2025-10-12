@@ -16,10 +16,36 @@ export default function ConsultationPage() {
           version: '2',
           containerId: 'chatkit-widget',
           config: {
-            // Optional: Customize appearance
             theme: {
-              primaryColor: '#2563eb', // Blue
-              borderRadius: '16px',
+              colorScheme: 'light',
+              radius: 'xl',
+              density: 'normal',
+              typography: {
+                baseSize: 16,
+              },
+            },
+            composer: {
+              placeholder: 'Type your tax question here...',
+              attachments: {
+                enabled: false,
+              },
+            },
+            startScreen: {
+              greeting: 'Welcome! I\'m your AI tax strategist. Tell me about your situation: income, filing status, and tax goals.',
+              prompts: [
+                {
+                  label: 'Freelancer tax tips',
+                  prompt: 'I\'m a freelancer making $120k. How can I reduce my taxes?',
+                },
+                {
+                  label: 'Business entity setup',
+                  prompt: 'Should I set up an S-Corp or LLC for my business?',
+                },
+                {
+                  label: 'Deduction strategies',
+                  prompt: 'What deductions am I missing as a small business owner?',
+                },
+              ],
             },
           },
         })
