@@ -1,0 +1,130 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Single admin user (you)
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// Your clients
+model Client {
+  id              String               @id @default(uuid())
+  accessToken     String               @unique @default(uuid()) // For client portal access
+  firstName       String
+  lastName        String
+  email           String
+  phone           String?
+  notes           String?              // Internal notes
+  creditAnalysis  String?              // Your analysis of their credit
+  improvements    String?              // Recommended improvements
+  status          ClientStatus         @default(PENDING)
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  uploadedReports CreditReportUpload[]
+  disputeLetters  DisputeLetter[]
+}
+
+enum ClientStatus {
+  PENDING      // Just created, waiting for reports
+  IN_REVIEW    // Reports received, being analyzed
+  IN_PROGRESS  // Disputes in progress
+  COMPLETED    // Case completed
+}
+
+// Credit report uploads from clients
+model CreditReportUpload {
+  id         String   @id @default(uuid())
+  clientId   String
+  client     Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  fileName   String
+  fileUrl    String   // Storage path
+  fileType   String   // PDF, PNG, JPG, etc.
+  bureau     Bureau?  // Which credit bureau
+  notes      String?  // Client notes about this upload
+  uploadedAt DateTime @default(now())
+}
+
+enum Bureau {
+  EQUIFAX
+  EXPERIAN
+  TRANSUNION
+  OTHER
+}
+
+// Generated dispute letters
+model DisputeLetter {
+  id           String       @id @default(uuid())
+  clientId     String
+  client       Client       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  templateId   String?
+  template     LetterTemplate? @relation(fields: [templateId], references: [id])
+  bureau       Bureau
+  accountName  String?      // Creditor/account being disputed
+  accountNumber String?
+  disputeReason String
+  content      String       // Generated letter content
+  status       LetterStatus @default(DRAFT)
+  sentDate     DateTime?
+  responseDate DateTime?
+  outcome      String?      // Result of the dispute
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+enum LetterStatus {
+  DRAFT
+  READY
+  SENT
+  RESPONDED
+  RESOLVED
+}
+
+// Dispute letter templates (the 6 templates)
+model LetterTemplate {
+  id          String          @id @default(uuid())
+  name        String
+  description String?
+  category    TemplateCategory
+  content     String          // Template with placeholders
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  letters     DisputeLetter[]
+}
+
+enum TemplateCategory {
+  GENERAL_DISPUTE           // General dispute letter
+  DEBT_VALIDATION           // Request debt validation
+  GOODWILL                  // Goodwill deletion request
+  PAY_FOR_DELETE            // Pay for delete negotiation
+  IDENTITY_THEFT            // Fraud/identity theft dispute
+  INQUIRY_REMOVAL           // Hard inquiry removal
+}
+
+// Contact form submissions
+model ContactSubmission {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  status    ContactStatus @default(NEW)
+  createdAt DateTime @default(now())
+}
+
+enum ContactStatus {
+  NEW
+  CONTACTED
+  CONVERTED
+  CLOSED
+}
