@@ -1,291 +1,154 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-interface FormData {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  location: string;
-  careType: string;
-  urgency: string;
-  message: string;
-}
+const HELP_OPTIONS = [
+  "Overnight care",
+  "Travel companion",
+  "Daily personal care",
+  "Just have questions",
+];
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    location: '',
-    careType: '',
-    urgency: '',
-    message: ''
-  });
+  const [help, setHelp] = useState<string[]>([]);
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState<{ firstName: string; phone: string } | null>(
+    null
+  );
+  const [error, setError] = useState("");
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const toggle = (value: string) =>
+    setHelp((cur) =>
+      cur.includes(value) ? cur.filter((v) => v !== value) : [...cur, value]
+    );
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
+    setError("");
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value.trim();
+    const who = (form.elements.namedItem("who") as HTMLInputElement).value.trim();
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          phone: '',
-          email: '',
-          location: '',
-          careType: '',
-          urgency: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-        setErrorMessage(result.error || 'Failed to send message');
-      }
-    } catch {
-      setSubmitStatus('error');
-      setErrorMessage('Network error. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    if (!name || !phone) {
+      setError("Please add your name and phone number so we can call you back.");
+      return;
     }
-  };
 
-  if (submitStatus === 'success') {
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, who, help }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setDone({ firstName: name.split(" ")[0], phone });
+    } catch {
+      setError(
+        "Something went wrong sending your request. Please call us at " +
+          PHONE_DISPLAY +
+          "."
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (done) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-        <div className="bg-green-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 className="text-2xl font-bold text-green-800 mb-4">Message Sent Successfully!</h3>
-        <p className="text-green-700 mb-6">
-          Thank you for contacting Elite Care Companion. Lenny will call you back within 1 hour to discuss your care needs.
-        </p>
-        <div className="bg-white p-4 rounded-lg border border-green-200 mb-6">
-          <p className="text-green-800 font-semibold">Need immediate assistance?</p>
-          <a
-            href="tel:470-696-3850"
-            className="text-xl sm:text-2xl font-bold text-blue-600 hover:text-blue-700 inline-block"
+      <div className="formcard" id="form">
+        <div style={{ textAlign: "center", padding: "30px 10px" }}>
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: "50%",
+              background: "#C99A3A",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto 22px",
+            }}
           >
-            (470) 696-3850
-          </a>
-          <p className="text-sm text-gray-600 mt-1">Available 24/7 for Emergency Home Care</p>
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#163C47" strokeWidth="3">
+              <path d="M5 12l4 4 10-10" />
+            </svg>
+          </div>
+          <h2 style={{ fontSize: "1.7rem", marginBottom: 12 }}>
+            Thank you, {done.firstName}.
+          </h2>
+          <p style={{ fontSize: "1.15rem", color: "#51605F", lineHeight: 1.6 }}>
+            We&apos;ve received your request and a caring team member will call you
+            shortly at <b style={{ color: "#1C4A57" }}>{done.phone}</b>.
+          </p>
+          <p style={{ fontSize: "1.05rem", color: "#51605F", marginTop: 18 }}>
+            Need to talk sooner? Call us anytime at{" "}
+            <a
+              href={`tel:${PHONE_TEL}`}
+              style={{ color: "#B07F1E", fontWeight: 700, whiteSpace: "nowrap" }}
+            >
+              {PHONE_DISPLAY}
+            </a>
+            .
+          </p>
         </div>
-        <button
-          onClick={() => setSubmitStatus('idle')}
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-        >
-          Send Another Message
-        </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      {submitStatus === 'error' && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-          <p className="text-red-800">
-            <strong>Error:</strong> {errorMessage}
-          </p>
+    <div className="formcard" id="form">
+      <h2>Tell us how we can help</h2>
+      <p className="fc-sub">
+        Fill in a few details and we&apos;ll call you back personally. It only takes
+        a minute.
+      </p>
+      <form onSubmit={onSubmit} noValidate>
+        <div className="field">
+          <label htmlFor="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Margaret Smith" autoComplete="name" />
         </div>
-      )}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-            First Name *
+        <div className="field">
+          <label htmlFor="phone">Your phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(470) 000-0000" autoComplete="tel" />
+        </div>
+        <div className="field">
+          <label htmlFor="who">
+            Who is the care for?{" "}
+            <span style={{ fontWeight: 500, color: "var(--muted)" }}>(optional)</span>
           </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
+          <input type="text" id="who" name="who" placeholder="e.g. My husband" />
         </div>
-        <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-            Last Name *
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
+        <div className="field">
+          <label>What kind of help do you need?</label>
+          <div className="help-opts">
+            {HELP_OPTIONS.map((o) => (
+              <label key={o} className={`opt${help.includes(o) ? " on" : ""}`}>
+                <input
+                  type="checkbox"
+                  name="help"
+                  value={o}
+                  checked={help.includes(o)}
+                  onChange={() => toggle(o)}
+                />{" "}
+                {o}
+              </label>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-            Phone Number *
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address *
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-2">
-            Location/Community
-          </label>
-          <select
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="">Select your area...</option>
-            <option value="buckhead">Buckhead</option>
-            <option value="sandy-springs">Sandy Springs</option>
-            <option value="brookhaven">Brookhaven</option>
-            <option value="druid-hills">Druid Hills</option>
-            <option value="alpharetta">Alpharetta</option>
-            <option value="roswell">Roswell</option>
-            <option value="vinings">Vinings</option>
-            <option value="smyrna">Smyrna</option>
-            <option value="decatur">Decatur</option>
-            <option value="other">Other Atlanta area</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="careType" className="block text-sm font-medium text-gray-700 mb-2">
-            Type of Care Needed
-          </label>
-          <select
-            id="careType"
-            name="careType"
-            value={formData.careType}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="">Please select...</option>
-            <option value="companionship">Companion Care</option>
-            <option value="personal-care">Personal Care</option>
-            <option value="dementia-care">Dementia/Alzheimer&apos;s Care</option>
-            <option value="post-surgery">Post-Surgery Recovery</option>
-            <option value="transportation">Transportation Services</option>
-            <option value="24-hour">24-Hour Care</option>
-            <option value="respite">Respite Care</option>
-            <option value="multiple">Multiple Services</option>
-            <option value="emergency">Emergency/Urgent Care</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="urgency" className="block text-sm font-medium text-gray-700 mb-2">
-          When do you need care to start?
-        </label>
-        <select
-          id="urgency"
-          name="urgency"
-          value={formData.urgency}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        >
-          <option value="">Please select...</option>
-          <option value="immediately">Immediately (Emergency)</option>
-          <option value="today">Today</option>
-          <option value="tomorrow">Tomorrow</option>
-          <option value="within-week">Within a week</option>
-          <option value="within-month">Within a month</option>
-          <option value="planning">Just planning ahead</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Tell us about your care needs
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="Please describe your specific care needs, medical conditions, mobility issues, or any other important information that will help us provide the best care..."
-        ></textarea>
-      </div>
-
-      <div className="text-center">
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors w-full md:w-auto mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? 'Sending...' : 'Get Free Consultation - Call Me Back'}
+        {error && (
+          <p style={{ color: "#B91C1C", fontWeight: 600, marginBottom: 12 }}>{error}</p>
+        )}
+        <button type="submit" className="btn btn-teal" disabled={submitting}>
+          {submitting ? "Sending…" : "Request my free call →"}
         </button>
-        <div className="text-center">
-          <p className="text-gray-600 mb-2">
-            Or call Lenny directly for immediate assistance:
-          </p>
-          <a
-            href="tel:470-696-3850"
-            className="text-xl sm:text-2xl font-bold text-blue-600 hover:text-blue-700 inline-block"
-          >
-            (470) 696-3850
-          </a>
-          <p className="text-sm text-gray-500 mt-2">Available 24/7 for Emergency Home Care</p>
-        </div>
-      </div>
-    </form>
+        <p className="reassure">
+          No cost and no obligation.{" "}
+          <b>A caring team member will call you back personally.</b>
+        </p>
+      </form>
+    </div>
   );
 }
