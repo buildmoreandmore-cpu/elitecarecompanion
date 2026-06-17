@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Elite Care Companion - Home Care Services in Atlanta, GA | Call (470) 696-3850",
   description: "Professional home care services in Buckhead, Sandy Springs, Brookhaven, Druid Hills & Alpharetta. Personal care, companionship, medication reminders, transportation. Licensed, bonded & available 24/7. Call Lenny at (470) 696-3850 for immediate assistance.",
   keywords: "home care Atlanta, personal care services Georgia, elderly care Buckhead, senior companion Sandy Springs, home health aide Brookhaven, medication reminders Druid Hills, transportation services Alpharetta, private caregiver Atlanta, emergency home care Georgia, 24 hour care Atlanta, live-in caregiver Buckhead, respite care Sandy Springs, elder care Brookhaven, senior sitting services Atlanta, home care near me, private duty nursing Atlanta, companion care services Georgia, senior home care Alpharetta, elderly assistance Druid Hills, disabled care Atlanta, convalescent care Georgia, recovery care services Atlanta, post-surgery care Buckhead, rehabilitation support Sandy Springs, chronic illness care Brookhaven, dementia care Alpharetta, Alzheimer's care Druid Hills, stroke recovery care Atlanta, hospice support Georgia, palliative care Atlanta, wheelchair assistance Sandy Springs, mobility help Buckhead, daily living assistance Brookhaven, personal hygiene help Druid Hills, meal preparation Alpharetta, grocery shopping services Atlanta, house cleaning elderly Georgia, prescription pickup Sandy Springs, doctor appointment transport Buckhead, medical transportation Brookhaven, reliable caregiver Atlanta, trusted home care Georgia, compassionate care Alpharetta, professional caregivers Sandy Springs, certified home health aide Buckhead, bonded caregivers Brookhaven, licensed home care Druid Hills, affordable home care Atlanta, quality senior care Georgia, immediate care services Atlanta, same day caregiver Sandy Springs, emergency elderly care Buckhead, urgent home care Brookhaven, weekend caregiver Druid Hills, holiday care services Alpharetta, overnight caregiver Atlanta, part-time home care Georgia, full-time caregiver Sandy Springs, temporary care services Buckhead, short-term care Brookhaven, long-term care Druid Hills",
-  authors: [{ name: "Lenny Monsanto", url: "mailto:lennylmonsanto@gmail.com" }],
+  authors: [{ name: "Elite Care Companion", url: "mailto:elitecarecompanionllc@gmail.com" }],
   creator: "Elite Care Companion",
   publisher: "Elite Care Companion",
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     "business:contact_data:postal_code": "30309",
     "business:contact_data:country_name": "United States",
     "business:contact_data:phone_number": "+14706963850",
-    "business:contact_data:email": "lennylmonsanto@gmail.com"
+    "business:contact_data:email": "elitecarecompanionllc@gmail.com"
   }
 };
 

@@ -1,6 +1,6 @@
 export const PHONE_DISPLAY = "(470) 696-3850";
 export const PHONE_TEL = "+14706963850";
-export const EMAIL = "lennylmonsanto@gmail.com";
+export const EMAIL = "elitecarecompanionllc@gmail.com";
 export const HOURS = "8am – 8pm, 7 days";
 
 export const NAV_LINKS = [

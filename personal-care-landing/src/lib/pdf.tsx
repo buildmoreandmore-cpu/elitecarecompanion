@@ -18,7 +18,7 @@ const BUSINESS = {
   name: "Elite Care Companion",
   tagline: "In-Home Care · Metro Atlanta",
   phone: "(470) 696-3850",
-  email: "lennylmonsanto@gmail.com",
+  email: "elitecarecompanionllc@gmail.com",
 };
 
 const s = StyleSheet.create({

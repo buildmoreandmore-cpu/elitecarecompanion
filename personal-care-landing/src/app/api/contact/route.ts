@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const resend = getResendClient();
     const { data, error } = await resend.emails.send({
       from: 'Elite Care Companion <noreply@elitecarecompanion.com>',
-      to: ['lennylmonsanto@gmail.com'],
+      to: ['elitecarecompanionllc@gmail.com'],
       subject: `New Care Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #FBF7F0; border-radius: 8px;">
