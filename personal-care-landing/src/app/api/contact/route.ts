@@ -80,6 +80,33 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
     }
 
+    // Optional: text the team via a carrier email-to-SMS gateway.
+    // LEAD_SMS_TO is e.g. "4706963850@mms.cricketwireless.net" — change the
+    // gateway here (env) to switch carriers without a code change. Non-blocking.
+    const smsTo = process.env.LEAD_SMS_TO;
+    if (smsTo) {
+      const smsBody = [
+        `New care request`,
+        `${name} ${phone}`,
+        who ? `For: ${who}` : null,
+        helpList.length ? helpList.join(', ') : null,
+      ]
+        .filter(Boolean)
+        .join('\n')
+        .slice(0, 300);
+      try {
+        await resend.emails.send({
+          from: 'Elite Care Companion <noreply@elitecarecompanion.com>',
+          to: [smsTo],
+          subject: 'New lead',
+          text: smsBody,
+        });
+      } catch (smsErr) {
+        // Don't fail the submission if the text gateway misbehaves.
+        console.error('SMS gateway send failed:', smsErr);
+      }
+    }
+
     return NextResponse.json(
       { message: 'Email sent successfully', id: data?.id },
       { status: 200 }
