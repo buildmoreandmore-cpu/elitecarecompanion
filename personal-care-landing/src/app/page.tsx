@@ -4,6 +4,17 @@ import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import { PHONE_DISPLAY, PHONE_TEL, HOURS } from "@/lib/site";
 
+const TICKER = [
+  "Lifts & transfers",
+  "Stand-by assist",
+  "Workout spotting",
+  "Wheelchair & walker",
+  "Fall response",
+  "Overnight care",
+  "Drives & errands",
+  "Daily routines",
+];
+
 export default function Home() {
   return (
     <div className="site">
@@ -23,13 +34,13 @@ export default function Home() {
               <span className="line2">He might accept this.</span>
             </h1>
             <p className="sub rise d2">
-              Strong, experienced male caregivers for older men in metro Atlanta.
-              Lifting, transfers, daily routines — and company that doesn&apos;t
-              feel like babysitting.
+              Strong, experienced male caregivers for men in metro Atlanta.
+              Lifting, transfers, workout support, daily routines — and company
+              that doesn&apos;t feel like babysitting.
             </p>
             <div className="cta-row rise d3">
               <a className="btn" href="#form">
-                Request a call back
+                Request a call back <span className="arr">→</span>
               </a>
               <a className="btn ghost" href="#how">
                 See how it works
@@ -47,59 +58,26 @@ export default function Home() {
         </div>
       </div>
 
-      {/* capability plate — straddles the hero seam */}
-      <div className="plate-section">
-        <div className="wrap">
-          <div className="plate">
-            <span className="rivet-b" />
-            <div className="plate-head">
-              What our caregivers are equipped to handle
-            </div>
-            <div className="plate-grid">
-              <div className="plate-item">
-                <h3>Lifts &amp; transfers</h3>
-                <p>
-                  Bed to chair, chair to car — done safely by caregivers strong
-                  enough to do it right.
-                </p>
-              </div>
-              <div className="plate-item">
-                <h3>Stand-by assist</h3>
-                <p>
-                  Steady support in the shower, on stairs, and anywhere balance
-                  gets uncertain.
-                </p>
-              </div>
-              <div className="plate-item">
-                <h3>Wheelchair &amp; walker</h3>
-                <p>
-                  Confident help with mobility equipment, at home and out in the
-                  world.
-                </p>
-              </div>
-              <div className="plate-item">
-                <h3>Fall response</h3>
-                <p>
-                  If he goes down, his caregiver can help him up — safely, without
-                  making it an emergency.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* capability ticker */}
+      <div className="ticker" aria-label="What our caregivers handle">
+        <div className="ticker-track">
+          {[...TICKER, ...TICKER].map((t, i) => (
+            <span key={i}>{t}</span>
+          ))}
         </div>
       </div>
 
       {/* he says he's fine */}
       <section className="fine-section">
         <div className="wrap fine-grid">
-          <div className="photo tall has-img rv">
+          <div className="photo tall has-img rev">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/caregiver-porch.png"
-              alt="A male caregiver walking an older man down his porch steps to the truck, mid-conversation and at ease"
+              src="/caregiver-steps.png"
+              alt="A male caregiver steadying an older man down his front steps toward the car, mid-conversation and at ease"
             />
           </div>
-          <div className="fine-copy rv">
+          <div className="fine-copy rev">
             <blockquote>
               &ldquo;He keeps saying he&apos;s fine. He&apos;s not fine. But he
               won&apos;t let anyone help him.&rdquo;
@@ -114,7 +92,7 @@ export default function Home() {
             </p>
             <p>
               That&apos;s why our caregivers for men are men — matched to his pace
-              and his interests. Someone who can talk shop, watch the game, drive
+              and his interests. Someone who can talk shop, spot his workout, drive
               him where he needs to go, and handle the physical work without making
               a thing of it.
             </p>
@@ -130,11 +108,11 @@ export default function Home() {
       {/* services */}
       <section className="services">
         <div className="wrap">
-          <div className="label">What we do</div>
-          <h2>Three ways we show up.</h2>
+          <div className="label rev">What we do</div>
+          <h2 className="rev">Three ways we show up.</h2>
           <div className="cards">
-            <div className="card rv">
-              <div className="tag">The heavy work</div>
+            <div className="card rev">
+              <div className="num">01 / THE HEAVY WORK</div>
               <h3>Lifting &amp; mobility</h3>
               <p>
                 The physical help most agencies can&apos;t safely provide. Our
@@ -144,11 +122,12 @@ export default function Home() {
               <ul>
                 <li>Transfers: bed, chair, car, toilet</li>
                 <li>Shower and stair support</li>
+                <li>Spotting workouts, on his therapist&apos;s plan</li>
                 <li>Help up after a fall</li>
               </ul>
             </div>
-            <div className="card rv">
-              <div className="tag">The daily routine</div>
+            <div className="card rev">
+              <div className="num">02 / THE DAILY ROUTINE</div>
               <h3>Personal care</h3>
               <p>
                 Bathing, dressing, meals, medication reminders — handled
@@ -160,34 +139,81 @@ export default function Home() {
                 <li>Medication reminders</li>
               </ul>
             </div>
-            <div className="card rv">
-              <div className="tag">The good part</div>
+            <div className="card rev">
+              <div className="num">03 / THE GOOD PART</div>
               <h3>Company &amp; errands</h3>
               <p>
-                Not babysitting. A capable guy to ride shotgun — errands,
-                appointments, the barbershop, the game on Saturday.
+                Not babysitting. A capable guy to ride shotgun — appointments, the
+                club, the game on Saturday.
               </p>
               <ul>
-                <li>Drives and appointments</li>
-                <li>Errands and the hardware store</li>
+                <li>The club, the course, his barbershop</li>
+                <li>Drives, errands, and appointments</li>
                 <li>Conversation worth having</li>
               </ul>
             </div>
           </div>
-          <div className="photo wide rv">
-            <span>
-              Photo: caregiver and client in the garage or workshop, working on
-              something together — or side by side at a diner counter. Candid over
-              posed.
-            </span>
+          <div className="photo wide has-img rev">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/caregiver-gym.png"
+              alt="A male caregiver spotting an older man through a seated cable row in a bright home gym"
+            />
           </div>
+        </div>
+      </section>
+
+      {/* who this is for */}
+      <section className="who">
+        <div className="wrap">
+          <div className="label rev">Who this is for</div>
+          <h2 className="rev">Not one kind of man. One kind of respect.</h2>
+          <p className="lede rev">
+            Some of the men we serve are in their nineties. Some are younger than
+            their caregivers. What they share is simple: they need real physical
+            help, and they refuse to be treated like patients.
+          </p>
+          <div className="vignettes">
+            <div className="vig rev">
+              <div className="tag">The Athlete</div>
+              <p>
+                He competed at a high level and trained every day of his life.
+                Paralysis changed what he needs — not who he is. His caregiver is a
+                workout partner: hands-on help where it&apos;s needed, a spotter
+                through the exercise plan his therapy team sets, and the energy of
+                someone who trains, not someone who hovers.
+              </p>
+            </div>
+            <div className="vig rev">
+              <div className="tag">The Craftsman</div>
+              <p>
+                Decades of building things with his hands, and standards that never
+                dropped even when his steadiness did. His caregiver keeps shop days
+                going — moving the heavy stock, steadying the fine work, and staying
+                out of the way of a man who knows exactly what he&apos;s doing.
+              </p>
+            </div>
+            <div className="vig rev">
+              <div className="tag">The Executive</div>
+              <p>
+                He ran companies. He&apos;s not about to be managed. His caregiver
+                keeps the calendar on track, drives him to the club and his standing
+                appointments, and handles transfers discreetly — help that operates
+                like trusted staff, never like supervision.
+              </p>
+            </div>
+          </div>
+          <p className="composite rev">
+            Profiles are composites drawn from the men we serve, with details
+            changed to protect their privacy.
+          </p>
         </div>
       </section>
 
       {/* matching */}
       <section className="match">
         <div className="wrap match-grid">
-          <div>
+          <div className="rev">
             <div className="label">The match matters</div>
             <h2>We don&apos;t send a caregiver. We send the right one.</h2>
             <p className="lede">
@@ -195,33 +221,34 @@ export default function Home() {
               who shows up.
             </p>
           </div>
-          <div>
-            <div className="match-item rv">
+          <div className="rev">
+            <div className="match-item">
               <div className="k">Matched to him</div>
               <p>
-                Veteran? Ball fan? Worked with his hands his whole life? We match
+                Athlete? Veteran? Worked with his hands his whole life? We match
                 caregivers by personality and interests, not just availability.
               </p>
             </div>
-            <div className="match-item rv">
+            <div className="match-item">
               <div className="k">Same face, every time</div>
               <p>
                 One consistent caregiver — not a rotation of strangers. Trust is
                 built by showing up.
               </p>
             </div>
-            <div className="match-item rv">
+            <div className="match-item">
               <div className="k">Fully vetted</div>
               <p>
-                Background-checked, experienced, and personally interviewed by our
-                team before they ever meet your family.
+                Background-checked, insured, and personally interviewed by our team
+                before they ever meet your family. Discreet, professional, and at
+                ease in fine homes.
               </p>
             </div>
-            <div className="match-item rv">
+            <div className="match-item">
               <div className="k">Private pay, no contracts</div>
               <p>
-                Clear pricing before anything begins. Start, adjust, or stop on
-                your schedule.
+                Clear pricing before anything begins. Start, adjust, or stop on your
+                schedule.
               </p>
             </div>
           </div>
@@ -231,27 +258,27 @@ export default function Home() {
       {/* steps */}
       <section className="steps" id="how">
         <div className="wrap">
-          <div className="label">Getting started</div>
-          <h2>Three steps. No paperwork maze.</h2>
+          <div className="label rev">Getting started</div>
+          <h2 className="rev">Three steps. No paperwork maze.</h2>
           <div className="step-grid">
-            <div className="step rv">
-              <div className="n">STEP 1</div>
+            <div className="step rev">
+              <div className="n">01</div>
               <h3>You call us</h3>
               <p>
                 Or fill the form. You&apos;ll talk to a real person who&apos;s had
                 this exact conversation many times.
               </p>
             </div>
-            <div className="step rv">
-              <div className="n">STEP 2</div>
+            <div className="step rev">
+              <div className="n">02</div>
               <h3>We meet him</h3>
               <p>
-                A low-key visit — no clipboard interrogation. We learn what he
-                needs and what he&apos;ll actually accept.
+                A low-key visit — no clipboard interrogation. We learn what he needs
+                and what he&apos;ll actually accept.
               </p>
             </div>
-            <div className="step rv">
-              <div className="n">STEP 3</div>
+            <div className="step rev">
+              <div className="n">03</div>
               <h3>The right guy shows up</h3>
               <p>
                 Care starts on a schedule that works, with a caregiver picked for
@@ -265,7 +292,7 @@ export default function Home() {
       {/* areas + cta */}
       <section className="cta" id="contact">
         <div className="wrap">
-          <div>
+          <div className="rev">
             <div className="label">Metro Atlanta</div>
             <h2>Start with one conversation.</h2>
             <p className="lede">
@@ -280,19 +307,18 @@ export default function Home() {
               and surrounding communities.
             </p>
           </div>
-          <div className="cta-box">
+          <div className="cta-box rev">
             <a className="phone-big" href={`tel:${PHONE_TEL}`}>
               {PHONE_DISPLAY}
             </a>
             <p className="hours">Open {HOURS}</p>
-            <a className="btn dark" href="#form">
-              Or request a call online
+            <a className="btn" href="#form">
+              Or request a call online <span className="arr">→</span>
             </a>
           </div>
         </div>
       </section>
 
-      <div className="brass-rule" />
       <SiteFooter />
     </div>
   );

@@ -5,6 +5,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 const NEED_OPTIONS = [
   "Lifting & transfers",
+  "Workout & mobility support",
   "Daily routine help",
   "Overnight care",
   "Company & errands",
@@ -59,14 +60,15 @@ export default function ContactForm() {
             style={{
               width: 64,
               height: 64,
-              background: "var(--brass-bright)",
+              borderRadius: "50%",
+              background: "var(--cobalt)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               margin: "0 auto 20px",
             }}
           >
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#14202C" strokeWidth="3">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3">
               <path d="M5 12l4 4 10-10" />
             </svg>
           </div>
@@ -79,7 +81,7 @@ export default function ContactForm() {
             Need to talk sooner? Call{" "}
             <a
               href={`tel:${PHONE_TEL}`}
-              style={{ color: "var(--brass)", fontWeight: 800, whiteSpace: "nowrap" }}
+              style={{ color: "var(--cobalt)", fontWeight: 800, whiteSpace: "nowrap" }}
             >
               {PHONE_DISPLAY}
             </a>

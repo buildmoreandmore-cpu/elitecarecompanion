@@ -6,7 +6,7 @@ export default function SiteHeader() {
     <>
       <div className="topbar">
         <div className="wrap">
-          <span>In-home care for older men · Metro Atlanta</span>
+          <span>In-home care for men · Metro Atlanta</span>
           <div>
             Open {HOURS} &nbsp;·&nbsp;{" "}
             <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
@@ -17,7 +17,8 @@ export default function SiteHeader() {
       <header className="masthead">
         <div className="wrap nav">
           <Link className="logo" href="/">
-            Elite Care<em>For Men</em>
+            <div className="disp">Elite Care</div>
+            <em>For Men</em>
           </Link>
 
           <div className="nav-links">
@@ -29,12 +30,10 @@ export default function SiteHeader() {
           </div>
 
           <Link className="btn" href="/#form">
-            Request a call
+            Request a call <span className="arr">→</span>
           </Link>
         </div>
       </header>
-
-      <div className="brass-rule" />
     </>
   );
 }
