@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Care for Men FAQ Atlanta | Elite Care Companion | Common Questions & Answers',
-  description: 'Frequently asked questions about home care in Atlanta. Cost, safety, caregiver qualifications, and more. Get expert answers from Elite Care Companion. Call (470) 696-3850.',
+  description: 'Frequently asked questions about home care in Atlanta. Cost, safety, caregiver qualifications, and more. Get expert answers from Elite Care Companion. Call (470) 507-8812.',
   keywords: 'home care FAQ Atlanta, home care questions, home care cost Atlanta, caregiver background check, home care safety, how much does home care cost, private home care Atlanta',
   openGraph: {
     title: 'Care for Men FAQ Atlanta | Elite Care Companion',
@@ -51,8 +51,8 @@ export default function HomeCareFAQ() {
           </div>
           <div className="faq-list">
             <div className="faq-item rv">
-              <h3>How much does home care cost in Atlanta?</h3>
-              <p>Home care costs in Atlanta vary based on the level of care needed: companion care runs $25&ndash;35 per hour, personal care $28&ndash;45 per hour, specialized care (dementia, medical) $35&ndash;55 per hour, live-in care $200&ndash;350 per day, and 24-hour shift care $380&ndash;530 per day. Costs are influenced by care complexity, caregiver qualifications, and location within Atlanta metro.</p>
+              <h3>How much does care for men cost in Atlanta?</h3>
+              <p>Companion visits start at $25/hr, hands-on personal and mobility care starts a bit higher, and live-in or 24-hour coverage is quoted per day. Your exact rate depends on the level of care, how many hours, and where he lives in metro Atlanta &mdash; so we give you one clear, all-in number during a free consultation. Private pay, no contracts, no hidden fees.</p>
             </div>
             <div className="faq-item rv">
               <h3>How does private-pay home care work?</h3>
@@ -60,7 +60,7 @@ export default function HomeCareFAQ() {
             </div>
             <div className="faq-item rv">
               <h3>Is home care cheaper than a nursing home?</h3>
-              <p>Home care is often more cost-effective, especially for moderate care needs. In Atlanta, home care averages $280&ndash;360/day for 8 hours, $420&ndash;540/day for 12 hours, or $200&ndash;350/day for live-in &mdash; while letting your loved one stay in their own home with one-on-one attention. Nursing homes average $300&ndash;500/day for a private room or $250&ndash;400/day semi-private, with shared staff attention and an institutional environment.</p>
+              <p>For many families, yes &mdash; especially for moderate care needs. Home care keeps him in his own home with one-on-one attention, and you only pay for the hours he actually needs, so it often compares well to the flat daily rate of a facility with shared staff. We&apos;ll lay out the numbers plainly in your free consultation so you can compare with confidence.</p>
             </div>
             <div className="faq-item rv">
               <h3>Can I afford home care on a fixed income?</h3>

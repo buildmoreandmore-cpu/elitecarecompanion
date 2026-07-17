@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion | Senior Companionship',
-  description: 'Professional companion care services in Atlanta. Social interaction, light housekeeping, transportation, and emotional support for seniors. Reduce isolation, maintain independence. Call (470) 696-3850.',
+  description: 'Professional companion care services in Atlanta. Social interaction, light housekeeping, transportation, and emotional support for seniors. Reduce isolation, maintain independence. Call (470) 507-8812.',
   keywords: 'companion care Atlanta, senior companion Atlanta, elderly companionship, senior social support Atlanta, companion caregiver, social isolation seniors, senior friendship, companion services Atlanta, elderly companion care, senior companion services',
   openGraph: {
     title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion',
-    description: 'Professional companion care in Atlanta. Social support and friendship for seniors. Call (470) 696-3850.',
+    description: 'Professional companion care in Atlanta. Social support and friendship for seniors. Call (470) 507-8812.',
   }
 };
 
@@ -190,7 +190,7 @@ export default function CompanionCare() {
           <div className="card-grid">
             <div className="care-card rv">
               <h3>A Few Hours Weekly</h3>
-              <p><strong>$25–35/hr · 2–8 hours per week</strong> — perfect for independent seniors.</p>
+              <p><strong>Starting at $25/hr · 2–8 hours per week</strong> — perfect for independent seniors.</p>
               <ul>
                 <li>Weekly grocery shopping trips</li>
                 <li>Social outings and activities</li>
@@ -202,7 +202,7 @@ export default function CompanionCare() {
 
             <div className="care-card rv">
               <h3>Daily Companion Care</h3>
-              <p><strong>$140–200/day · 4–8 hours daily</strong> — our most popular option.</p>
+              <p><strong>Starting at $140/day · 4–8 hours daily</strong> — our most popular option.</p>
               <ul>
                 <li>Daily meal preparation and companionship</li>
                 <li>Transportation to appointments</li>
@@ -215,7 +215,7 @@ export default function CompanionCare() {
 
             <div className="care-card rv">
               <h3>Live-In Companion</h3>
-              <p><strong>$200–280/day · 24/7 companionship available</strong> — maximum support &amp; friendship.</p>
+              <p><strong>Starting at $200/day · 24/7 companionship available</strong> — maximum support &amp; friendship.</p>
               <ul>
                 <li>Constant companionship and safety</li>
                 <li>All meals and household management</li>

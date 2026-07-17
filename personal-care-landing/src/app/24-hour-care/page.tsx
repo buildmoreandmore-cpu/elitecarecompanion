@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: '24-Hour & Overnight Care for Older Men in Atlanta | Elite Care Companion | Round-the-Clock Care',
-  description: 'Professional 24-hour live-in home care in Atlanta. Round-the-clock care for seniors, post-surgery recovery, and dementia patients. Experienced caregivers, overnight coverage. Call (470) 696-3850.',
+  description: 'Professional 24-hour live-in home care in Atlanta. Round-the-clock care for seniors, post-surgery recovery, and dementia patients. Experienced caregivers, overnight coverage. Call (470) 507-8812.',
   keywords: '24 hour home care Atlanta, live-in caregiver Atlanta, round the clock care, overnight care Atlanta, 24/7 home care, night shift caregiver, live-in companion Atlanta, 24 hour elderly care, full time home care Atlanta, residential care Atlanta',
   openGraph: {
     title: '24-Hour & Overnight Care for Older Men in Atlanta | Elite Care Companion',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '24-Hour & Overnight Care for Older Men in Atlanta | Elite Care Companion',
-    description: 'Professional 24-hour live-in home care in Atlanta. Round-the-clock coverage available. Call (470) 696-3850.',
+    description: 'Professional 24-hour live-in home care in Atlanta. Round-the-clock coverage available. Call (470) 507-8812.',
   }
 };
 
@@ -176,9 +176,9 @@ export default function TwentyFourHourCare() {
             <div className="care-card rv">
               <h3>Live-In Care Rates</h3>
               <ul>
-                <li>Standard live-in: <strong>$250–350/day</strong></li>
-                <li>Dementia specialist: <strong>$300–400/day</strong></li>
-                <li>Post-surgery care: <strong>$350–450/day</strong></li>
+                <li>Standard live-in: <strong>from $250/day</strong></li>
+                <li>Dementia specialist: <strong>from $300/day</strong></li>
+                <li>Post-surgery care: <strong>from $350/day</strong></li>
               </ul>
               <p>Includes room, board, all care services, and backup coverage.</p>
             </div>
@@ -186,9 +186,9 @@ export default function TwentyFourHourCare() {
             <div className="care-card rv">
               <h3>24-Hour Shift Care</h3>
               <ul>
-                <li>12-hour day shift: <strong>$180–250/shift</strong></li>
-                <li>12-hour night shift: <strong>$200–280/shift</strong></li>
-                <li>Total daily cost: <strong>$380–530/day</strong></li>
+                <li>12-hour day shift: <strong>from $180/shift</strong></li>
+                <li>12-hour night shift: <strong>from $200/shift</strong></li>
+                <li>Total daily cost: <strong>from $380/day</strong></li>
               </ul>
               <p>Includes professional caregivers, supervision, and coordination.</p>
             </div>

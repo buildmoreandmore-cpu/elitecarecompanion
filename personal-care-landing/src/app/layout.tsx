@@ -38,7 +38,7 @@ const mulish = Mulish({
 export const metadata: Metadata = {
   metadataBase: new URL('https://elitecarecompanion.com'),
   title: "Elite Care for Men — In-Home Care for Men | Metro Atlanta",
-  description: "Strong, experienced male caregivers for men in metro Atlanta. Lifting, transfers, workout support, daily routines — and company that doesn't feel like babysitting. Call (470) 696-3850.",
+  description: "Strong, experienced male caregivers for men in metro Atlanta. Lifting, transfers, workout support, daily routines — and company that doesn't feel like babysitting. Call (470) 507-8812.",
   keywords: "male caregiver Atlanta, in-home care for men, caregiver for older men Atlanta, male home health aide Buckhead, men's personal care Sandy Springs, lifting and transfer care Brookhaven, male companion caregiver Druid Hills, senior care for men Alpharetta, private caregiver for men Atlanta, male caregiver for elderly father, overnight male caregiver Atlanta, fall recovery care Atlanta, mobility assistance for men Buckhead, dignified personal care for men, veteran caregiver Atlanta, dementia care for men Atlanta, 24 hour male caregiver Atlanta, private pay home care Georgia, strong caregiver for transfers, wheelchair and walker assistance Atlanta",
   authors: [{ name: "Elite Care Companion", url: "mailto:elitecarecompanionllc@gmail.com" }],
   creator: "Elite Care Companion",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Elite Care for Men — In-Home Care for Older Men | Metro Atlanta",
-    description: "Strong, experienced male caregivers for older men in metro Atlanta. Lifting, transfers, daily routines, and company that doesn't feel like babysitting. Call (470) 696-3850.",
+    description: "Strong, experienced male caregivers for older men in metro Atlanta. Lifting, transfers, daily routines, and company that doesn't feel like babysitting. Call (470) 507-8812.",
     url: "https://elitecarecompanion.com",
     siteName: "Elite Care · For Men",
     type: "website",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Elite Care for Men — In-Home Care for Men | Metro Atlanta",
-    description: "Strong, experienced male caregivers for men in metro Atlanta. Call (470) 696-3850.",
+    description: "Strong, experienced male caregivers for men in metro Atlanta. Call (470) 507-8812.",
     images: ["/caregiver-steps.png"]
   },
   verification: {
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     "business:contact_data:region": "Georgia",
     "business:contact_data:postal_code": "30309",
     "business:contact_data:country_name": "United States",
-    "business:contact_data:phone_number": "+14706963850",
+    "business:contact_data:phone_number": "+14705078812",
     "business:contact_data:email": "elitecarecompanionllc@gmail.com"
   }
 };

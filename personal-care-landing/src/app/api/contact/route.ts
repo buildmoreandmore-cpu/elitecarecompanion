@@ -30,9 +30,11 @@ export async function POST(request: NextRequest) {
     const helpList = Array.isArray(help) ? help.filter(Boolean) : [];
 
     const resend = getResendClient();
+    // Lead notifications go to the Cedar Valley Investment Group inbox.
+    const LEAD_TO = process.env.LEAD_EMAIL_TO || 'cedarvalleyinvestmentgroup@gmail.com';
     const { data, error } = await resend.emails.send({
-      from: 'Elite Care Companion <noreply@elitecarecompanion.com>',
-      to: ['elitecarecompanionllc@gmail.com'],
+      from: 'Elite Care · For Men <noreply@elitecarecompanion.com>',
+      to: [LEAD_TO],
       subject: `New Care Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #FBF7F0; border-radius: 8px;">
@@ -69,7 +71,7 @@ export async function POST(request: NextRequest) {
             </div>
           </div>
           <div style="text-align: center; padding: 18px 0; color: #51605F; font-size: 12px;">
-            <p>Elite Care Companion · Metro Atlanta · (470) 696-3850</p>
+            <p>Elite Care Companion · Metro Atlanta · (470) 507-8812</p>
           </div>
         </div>
       `,

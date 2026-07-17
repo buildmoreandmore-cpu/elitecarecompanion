@@ -8,7 +8,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'In-Home Care for Older Men in Brookhaven | Elite Care Companion | Near Emory & CDC',
-  description: 'Professional home care services in Brookhaven, GA. Serving Town Brookhaven, Emory University area, CDC neighborhoods. 24/7 care, dementia specialists, companion care. Call (470) 696-3850.',
+  description: 'Professional home care services in Brookhaven, GA. Serving Town Brookhaven, Emory University area, CDC neighborhoods. 24/7 care, dementia specialists, companion care. Call (470) 507-8812.',
   keywords: 'Brookhaven home care, Emory University home care, CDC area eldercare, Town Brookhaven senior care, Brookhaven personal care, home health aide Brookhaven, elderly care Brookhaven GA, Brookhaven caregiver services, senior companion Brookhaven, Brookhaven dementia care',
   openGraph: {
     title: 'In-Home Care for Older Men in Brookhaven | Elite Care Companion',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'In-Home Care for Older Men in Brookhaven | Elite Care Companion',
-    description: 'Professional home care in Brookhaven, GA. Care available 24/7. Call (470) 696-3850.',
+    description: 'Professional home care in Brookhaven, GA. Care available 24/7. Call (470) 507-8812.',
   }
 };
 

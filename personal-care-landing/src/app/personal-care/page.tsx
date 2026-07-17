@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Personal Care for Older Men in Atlanta | Elite Care Companion | Bathing & Personal Hygiene',
-  description: 'Professional personal care services in Atlanta. Bathing, dressing, toileting, medication management, mobility assistance. Dignified, compassionate care preserving independence. Call (470) 696-3850.',
+  description: 'Professional personal care services in Atlanta. Bathing, dressing, toileting, medication management, mobility assistance. Dignified, compassionate care preserving independence. Call (470) 507-8812.',
   keywords: 'personal care Atlanta, bathing assistance Atlanta, elderly personal care, senior bathing services, personal hygiene care, mobility assistance Atlanta, medication management, toileting assistance, dressing help seniors, personal care aide Atlanta',
   openGraph: {
     title: 'Personal Care for Older Men in Atlanta | Elite Care Companion',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Personal Care for Older Men in Atlanta | Elite Care Companion',
-    description: 'Professional personal care in Atlanta. Bathing, dressing, and mobility assistance. Call (470) 696-3850.',
+    description: 'Professional personal care in Atlanta. Bathing, dressing, and mobility assistance. Call (470) 507-8812.',
   }
 };
 
@@ -219,7 +219,7 @@ export default function PersonalCare() {
           <div className="card-grid">
             <div className="care-card rv">
               <h3>Light Personal Care</h3>
-              <p><strong>$28–38/hr · 2–6 hours as needed</strong> — perfect for early needs.</p>
+              <p><strong>Starting at $28/hr · 2–6 hours as needed</strong> — perfect for early needs.</p>
               <ul>
                 <li>Medication reminders and organization</li>
                 <li>Dressing assistance and clothing selection</li>
@@ -232,7 +232,7 @@ export default function PersonalCare() {
 
             <div className="care-card rv">
               <h3>Full Personal Care</h3>
-              <p><strong>$32–45/hr · 4–12 hours daily</strong> — our most comprehensive option.</p>
+              <p><strong>Starting at $32/hr · 4–12 hours daily</strong> — our most comprehensive option.</p>
               <ul>
                 <li>Complete bathing and shower assistance</li>
                 <li>Toileting and incontinence care</li>
@@ -246,7 +246,7 @@ export default function PersonalCare() {
 
             <div className="care-card rv">
               <h3>Specialized Medical Care</h3>
-              <p><strong>$38–55/hr · Certified nursing assistants</strong> — for complex medical needs.</p>
+              <p><strong>Starting at $38/hr · Certified nursing assistants</strong> — for complex medical needs.</p>
               <ul>
                 <li>Advanced wound care and dressing changes</li>
                 <li>Catheter and ostomy care</li>

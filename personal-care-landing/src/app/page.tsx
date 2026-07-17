@@ -28,7 +28,6 @@ export default function Home() {
       <div className="hero" id="top">
         <div className="wrap">
           <div>
-            <div className="label rise">Male caregivers · Built for the job</div>
             <h1 className="rise d1">
               He won&apos;t accept help.
               <span className="line2">He might accept this.</span>

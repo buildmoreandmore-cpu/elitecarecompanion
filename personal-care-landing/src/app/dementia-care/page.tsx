@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Dementia & Alzheimer\'s Care for Men in Atlanta GA | Elite Care Companion',
-  description: 'Specialized dementia and Alzheimer\'s care in Atlanta. Memory care at home in Buckhead, Sandy Springs, Brookhaven. Trained caregivers, safety protocols, 24/7 support. Call (470) 696-3850.',
+  description: 'Specialized dementia and Alzheimer\'s care in Atlanta. Memory care at home in Buckhead, Sandy Springs, Brookhaven. Trained caregivers, safety protocols, 24/7 support. Call (470) 507-8812.',
   keywords: 'dementia care Atlanta, Alzheimer\'s care Georgia, memory care at home Atlanta, dementia caregiver Atlanta, Alzheimer\'s support Georgia, dementia care Buckhead, memory care Sandy Springs, dementia care Brookhaven, Alzheimer\'s care Alpharetta, dementia care Druid Hills, memory care services Atlanta, dementia home care Georgia, Alzheimer\'s home care Atlanta, dementia care near me, memory care specialist Atlanta, dementia respite care Atlanta, Alzheimer\'s caregiver Georgia, dementia safety Atlanta, memory care support Atlanta, dementia care cost Atlanta, Alzheimer\'s care cost Georgia, dementia day care Atlanta, memory care programs Atlanta, dementia activities Atlanta, Alzheimer\'s activities Georgia, dementia behavior management Atlanta, memory care nutrition Atlanta, dementia wandering prevention Atlanta, Alzheimer\'s sundowning care Georgia, dementia medication management Atlanta'
 };
 
@@ -216,10 +216,10 @@ export default function DementiaCare() {
           <div className="prose-care rv">
             <h3>Average Memory Care Costs</h3>
             <ul>
-              <li><strong>Part-time memory care (4 hours):</strong> $120&ndash;180/day</li>
-              <li><strong>Full-time memory care (12 hours):</strong> $300&ndash;450/day</li>
-              <li><strong>24-hour memory care:</strong> $400&ndash;600/day</li>
-              <li><strong>Live-in memory care specialist:</strong> $250&ndash;400/day</li>
+              <li><strong>Part-time memory care (4 hours):</strong> from $120/day</li>
+              <li><strong>Full-time memory care (12 hours):</strong> from $300/day</li>
+              <li><strong>24-hour memory care:</strong> from $400/day</li>
+              <li><strong>Live-in memory care specialist:</strong> from $250/day</li>
             </ul>
             <p>Costs vary based on the level of care needed and caregiver qualifications. We offer flexible private-pay plans and family care arrangements, and we&apos;re happy to build a plan that fits your budget.</p>
           </div>

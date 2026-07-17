@@ -17,7 +17,7 @@ const LINE = "#D9CDB6";
 const BUSINESS = {
   name: "Elite Care Companion",
   tagline: "In-Home Care · Metro Atlanta",
-  phone: "(470) 696-3850",
+  phone: "(470) 507-8812",
   email: "elitecarecompanionllc@gmail.com",
 };
 

@@ -8,7 +8,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'In-Home Care for Older Men in Druid Hills | Elite Care Companion | Historic Garden District',
-  description: 'Professional home care in historic Druid Hills, GA. Serving Fernbank area, Emory University neighborhoods, Lullwater Park vicinity. Expert care for historic homes and established families. Call (470) 696-3850.',
+  description: 'Professional home care in historic Druid Hills, GA. Serving Fernbank area, Emory University neighborhoods, Lullwater Park vicinity. Expert care for historic homes and established families. Call (470) 507-8812.',
   keywords: 'Druid Hills home care, Fernbank home care, Emory Druid Hills senior care, historic Druid Hills eldercare, Lullwater Park area care, Druid Hills caregiver, elderly care Druid Hills GA, Druid Hills companion care, senior home care Druid Hills, Druid Hills dementia care',
   openGraph: {
     title: 'In-Home Care for Older Men in Druid Hills | Elite Care Companion',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'In-Home Care for Older Men in Druid Hills | Elite Care Companion',
-    description: 'Professional home care in historic Druid Hills, GA. Compassionate, private-pay care for established families. Call (470) 696-3850.',
+    description: 'Professional home care in historic Druid Hills, GA. Compassionate, private-pay care for established families. Call (470) 507-8812.',
   }
 };
 
