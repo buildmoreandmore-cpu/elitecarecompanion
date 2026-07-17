@@ -7,11 +7,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Alpharetta Home Care Services | Elite Care Companion | North Fulton Senior Care',
+  title: 'In-Home Care for Older Men in Alpharetta | Elite Care Companion | North Fulton Senior Care',
   description: 'Professional home care services in Alpharetta, GA. Serving Avalon, North Point, and gated communities. Corporate family specialists, modern home care solutions. Call (470) 696-3850.',
   keywords: 'Alpharetta home care, Avalon home care, North Point senior care, Alpharetta elder care, North Fulton home care, Alpharetta caregiver, elderly care Alpharetta GA, Alpharetta companion care, senior care Alpharetta, Alpharetta dementia care',
   openGraph: {
-    title: 'Alpharetta Home Care Services | Elite Care Companion',
+    title: 'In-Home Care for Older Men in Alpharetta | Elite Care Companion',
     description: 'Trusted home care in Alpharetta, GA. Serving corporate families and retirees in North Fulton with professional, compassionate care solutions.',
     url: 'https://elitecarecompanion.com/alpharetta-home-care',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alpharetta Home Care Services | Elite Care Companion',
+    title: 'In-Home Care for Older Men in Alpharetta | Elite Care Companion',
     description: 'Professional home care in Alpharetta, GA. Compassionate, private-pay care for North Fulton families. Call (470) 696-3850.',
   }
 };
@@ -34,7 +34,7 @@ export default function AlpharettaHomeCare() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Home Care · Alpharetta</div>
-          <h1>Alpharetta Corporate Family Home Care</h1>
+          <h1>In-Home Care for Older Men in Alpharetta</h1>
           <p>
             Specialized care for North Fulton&apos;s corporate professionals and retirees &mdash; from
             Avalon to gated communities, we understand the modern family&apos;s care needs.
@@ -386,7 +386,7 @@ export default function AlpharettaHomeCare() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am &ndash; 8pm, 7 days</div>

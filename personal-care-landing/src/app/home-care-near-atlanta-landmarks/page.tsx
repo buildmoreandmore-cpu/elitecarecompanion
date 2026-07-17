@@ -7,11 +7,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Home Care Near Atlanta Landmarks | Elite Care Companion | Phipps Plaza, Emory, Lenox',
+  title: 'Care for Older Men Near Atlanta Landmarks | Elite Care Companion | Phipps Plaza, Emory, Lenox',
   description: 'Home care services near major Atlanta landmarks. Phipps Plaza, Emory Hospital, Lenox Square, Perimeter Mall, Atlanta Botanical Garden. Local home care experts. Call (470) 696-3850.',
   keywords: 'home care near Phipps Plaza, home care near Emory Hospital, home care near Lenox Square, home care near Perimeter Mall, home care near Northside Hospital, home care near Atlanta Botanical Garden, home care near Fernbank Museum, home care near Town Brookhaven',
   openGraph: {
-    title: 'Home Care Near Atlanta Landmarks | Elite Care Companion',
+    title: 'Care for Older Men Near Atlanta Landmarks | Elite Care Companion',
     description: 'Professional home care services throughout Atlanta near major landmarks, hospitals, shopping centers, and attractions.',
     url: 'https://elitecarecompanion.com/home-care-near-atlanta-landmarks',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Home Care Near Atlanta Landmarks | Elite Care Companion',
+    title: 'Care for Older Men Near Atlanta Landmarks | Elite Care Companion',
     description: 'Home care services near Phipps Plaza, Emory Hospital, Lenox Square, and other Atlanta landmarks.',
   }
 };
@@ -34,7 +34,7 @@ export default function HomeCareLandmarks() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Local Atlanta Experts</div>
-          <h1>Home Care Near Atlanta Landmarks</h1>
+          <h1>Care for Older Men Near Atlanta Landmarks</h1>
           <p>Professional home care services throughout Atlanta near the major landmarks, hospitals, shopping centers, and cultural attractions you know and love.</p>
           <div className="hero-actions">
             <a className="btn btn-gold" href="#contact">Request a free call</a>
@@ -306,7 +306,7 @@ export default function HomeCareLandmarks() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation with a local Atlanta home care expert.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am &ndash; 8pm, 7 days</div>

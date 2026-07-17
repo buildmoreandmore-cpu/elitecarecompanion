@@ -6,7 +6,7 @@ import Reveal from '@/components/Reveal';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Home Care Services in Buckhead Atlanta - Near Phipps Plaza & Lenox Square | Elite Care Companion',
+  title: 'In-Home Care for Older Men in Buckhead, Atlanta | Elite Care Companion',
   description: 'Professional home care services in Buckhead, Atlanta. Serving Phipps Plaza, Lenox Square, Buckhead Village. Personal care, companionship, 24/7 care. Call (470) 696-3850 for same-day service.',
   keywords: 'home care Buckhead, senior care Phipps Plaza, elderly care Lenox Square, Buckhead Village home care, private caregiver Buckhead Atlanta, live-in care Buckhead, 24 hour care Buckhead, dementia care Buckhead, post surgery care Buckhead, companion care Buckhead, weekend caregiver Buckhead, overnight care Buckhead, respite care Buckhead, Buckhead senior services, home health aide Buckhead, personal care Buckhead Atlanta, medication reminders Buckhead, transportation services Buckhead, meal preparation Buckhead',
 };
@@ -20,7 +20,7 @@ export default function BuckheadHomeCare() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Home Care · Buckhead</div>
-          <h1>Home Care Services in Buckhead, Atlanta</h1>
+          <h1>In-Home Care for Older Men in Buckhead</h1>
           <p>Serving Phipps Plaza, Lenox Square, Buckhead Village &amp; surrounding areas with discreet, compassionate care that protects independence and dignity.</p>
           <div className="hero-actions">
             <a className="btn btn-gold" href="#contact">Request a free call</a>
@@ -196,7 +196,7 @@ export default function BuckheadHomeCare() {
 
       <section className="bigcta" id="contact">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am – 8pm, 7 days</div>

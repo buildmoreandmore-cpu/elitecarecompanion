@@ -3,25 +3,20 @@
 import { useState } from "react";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-const HELP_OPTIONS = [
+const NEED_OPTIONS = [
+  "Lifting & transfers",
+  "Daily routine help",
   "Overnight care",
-  "Travel companion",
-  "Daily personal care",
+  "Company & errands",
   "Just have questions",
 ];
 
 export default function ContactForm() {
-  const [help, setHelp] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState<{ firstName: string; phone: string } | null>(
     null
   );
   const [error, setError] = useState("");
-
-  const toggle = (value: string) =>
-    setHelp((cur) =>
-      cur.includes(value) ? cur.filter((v) => v !== value) : [...cur, value]
-    );
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,7 +24,7 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
     const phone = (form.elements.namedItem("phone") as HTMLInputElement).value.trim();
-    const who = (form.elements.namedItem("who") as HTMLInputElement).value.trim();
+    const need = (form.elements.namedItem("need") as HTMLSelectElement).value;
 
     if (!name || !phone) {
       setError("Please add your name and phone number so we can call you back.");
@@ -41,7 +36,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, who, help }),
+        body: JSON.stringify({ name, phone, who: "", help: [need] }),
       });
       if (!res.ok) throw new Error("Request failed");
       setDone({ firstName: name.split(" ")[0], phone });
@@ -58,36 +53,33 @@ export default function ContactForm() {
 
   if (done) {
     return (
-      <div className="formcard" id="form">
-        <div style={{ textAlign: "center", padding: "30px 10px" }}>
+      <div className="ticket" id="form">
+        <div style={{ textAlign: "center", padding: "20px 6px" }}>
           <div
             style={{
-              width: 72,
-              height: 72,
-              borderRadius: "50%",
-              background: "#C99A3A",
+              width: 64,
+              height: 64,
+              background: "var(--brass-bright)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              margin: "0 auto 22px",
+              margin: "0 auto 20px",
             }}
           >
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#163C47" strokeWidth="3">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#14202C" strokeWidth="3">
               <path d="M5 12l4 4 10-10" />
             </svg>
           </div>
-          <h2 style={{ fontSize: "1.7rem", marginBottom: 12 }}>
-            Thank you, {done.firstName}.
-          </h2>
-          <p style={{ fontSize: "1.15rem", color: "#51605F", lineHeight: 1.6 }}>
-            We&apos;ve received your request and a caring team member will call you
-            shortly at <b style={{ color: "#1C4A57" }}>{done.phone}</b>.
+          <h3 style={{ marginBottom: 10 }}>Thank you, {done.firstName}.</h3>
+          <p style={{ marginBottom: 12 }}>
+            We&apos;ve got your request. A team member will call you back the same
+            day at <b style={{ color: "var(--ink)" }}>{done.phone}</b>.
           </p>
-          <p style={{ fontSize: "1.05rem", color: "#51605F", marginTop: 18 }}>
-            Need to talk sooner? Call us anytime at{" "}
+          <p style={{ fontSize: 15, color: "var(--ink-soft)" }}>
+            Need to talk sooner? Call{" "}
             <a
               href={`tel:${PHONE_TEL}`}
-              style={{ color: "#B07F1E", fontWeight: 700, whiteSpace: "nowrap" }}
+              style={{ color: "var(--brass)", fontWeight: 800, whiteSpace: "nowrap" }}
             >
               {PHONE_DISPLAY}
             </a>
@@ -99,56 +91,35 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="formcard" id="form">
-      <h2>Tell us how we can help</h2>
-      <p className="fc-sub">
-        Fill in a few details and we&apos;ll call you back personally. It only takes
-        a minute.
+    <form className="ticket" id="form" onSubmit={onSubmit} noValidate>
+      <h3>Tell us about him.</h3>
+      <p>
+        Three quick fields and we&apos;ll call you back personally. No cost, no
+        pressure.
       </p>
-      <form onSubmit={onSubmit} noValidate>
-        <div className="field">
-          <label htmlFor="name">Your name</label>
-          <input type="text" id="name" name="name" placeholder="e.g. Margaret Smith" autoComplete="name" />
-        </div>
-        <div className="field">
-          <label htmlFor="phone">Your phone number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(470) 000-0000" autoComplete="tel" />
-        </div>
-        <div className="field">
-          <label htmlFor="who">
-            Who is the care for?{" "}
-            <span style={{ fontWeight: 500, color: "var(--muted)" }}>(optional)</span>
-          </label>
-          <input type="text" id="who" name="who" placeholder="e.g. My husband" />
-        </div>
-        <div className="field">
-          <label>What kind of help do you need?</label>
-          <div className="help-opts">
-            {HELP_OPTIONS.map((o) => (
-              <label key={o} className={`opt${help.includes(o) ? " on" : ""}`}>
-                <input
-                  type="checkbox"
-                  name="help"
-                  value={o}
-                  checked={help.includes(o)}
-                  onChange={() => toggle(o)}
-                />{" "}
-                {o}
-              </label>
-            ))}
-          </div>
-        </div>
-        {error && (
-          <p style={{ color: "#B91C1C", fontWeight: 600, marginBottom: 12 }}>{error}</p>
-        )}
-        <button type="submit" className="btn btn-teal" disabled={submitting}>
-          {submitting ? "Sending…" : "Request my free call →"}
-        </button>
-        <p className="reassure">
-          No cost and no obligation.{" "}
-          <b>A caring team member will call you back personally.</b>
-        </p>
-      </form>
-    </div>
+      <div className="field">
+        <label htmlFor="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autoComplete="name" required />
+      </div>
+      <div className="field">
+        <label htmlFor="f-phone">Your phone number</label>
+        <input id="f-phone" name="phone" type="tel" autoComplete="tel" required />
+      </div>
+      <div className="field">
+        <label htmlFor="f-need">What does he need most?</label>
+        <select id="f-need" name="need" defaultValue={NEED_OPTIONS[0]}>
+          {NEED_OPTIONS.map((o) => (
+            <option key={o}>{o}</option>
+          ))}
+        </select>
+      </div>
+      {error && (
+        <p style={{ color: "#B91C1C", fontWeight: 600, marginBottom: 12 }}>{error}</p>
+      )}
+      <button className="btn" type="submit" disabled={submitting}>
+        {submitting ? "Sending…" : "Request my call back"}
+      </button>
+      <p className="fine">A team member calls you back the same day.</p>
+    </form>
   );
 }

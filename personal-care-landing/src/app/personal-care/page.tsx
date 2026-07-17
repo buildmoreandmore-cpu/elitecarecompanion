@@ -6,11 +6,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Personal Care Services Atlanta | Elite Care Companion | Bathing & Personal Hygiene',
+  title: 'Personal Care for Older Men in Atlanta | Elite Care Companion | Bathing & Personal Hygiene',
   description: 'Professional personal care services in Atlanta. Bathing, dressing, toileting, medication management, mobility assistance. Dignified, compassionate care preserving independence. Call (470) 696-3850.',
   keywords: 'personal care Atlanta, bathing assistance Atlanta, elderly personal care, senior bathing services, personal hygiene care, mobility assistance Atlanta, medication management, toileting assistance, dressing help seniors, personal care aide Atlanta',
   openGraph: {
-    title: 'Personal Care Services Atlanta | Elite Care Companion',
+    title: 'Personal Care for Older Men in Atlanta | Elite Care Companion',
     description: 'Professional personal care throughout Atlanta metro. Bathing, dressing, and personal hygiene assistance with dignity and compassion.',
     url: 'https://elitecarecompanion.com/personal-care',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Personal Care Services Atlanta | Elite Care Companion',
+    title: 'Personal Care for Older Men in Atlanta | Elite Care Companion',
     description: 'Professional personal care in Atlanta. Bathing, dressing, and mobility assistance. Call (470) 696-3850.',
   }
 };
@@ -32,8 +32,8 @@ export default function PersonalCare() {
 
       <header className="page-hero">
         <div className="inner">
-          <div className="k">Personal Care in Atlanta</div>
-          <h1>Professional Personal Care Services</h1>
+          <div className="k">Personal Care for Men · Metro Atlanta</div>
+          <h1>Personal Care for Older Men</h1>
           <p>
             Dignified assistance with bathing, dressing, toileting, and personal hygiene —
             preserving independence while ensuring safety and comfort.
@@ -324,7 +324,7 @@ export default function PersonalCare() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am – 8pm, 7 days</div>

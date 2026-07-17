@@ -6,11 +6,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Home Care FAQ Atlanta | Elite Care Companion | Common Questions & Answers',
+  title: 'Care for Men FAQ Atlanta | Elite Care Companion | Common Questions & Answers',
   description: 'Frequently asked questions about home care in Atlanta. Cost, safety, caregiver qualifications, and more. Get expert answers from Elite Care Companion. Call (470) 696-3850.',
   keywords: 'home care FAQ Atlanta, home care questions, home care cost Atlanta, caregiver background check, home care safety, how much does home care cost, private home care Atlanta',
   openGraph: {
-    title: 'Home Care FAQ Atlanta | Elite Care Companion',
+    title: 'Care for Men FAQ Atlanta | Elite Care Companion',
     description: 'Get answers to common home care questions. Cost, safety, and caregiver qualifications in Atlanta metro area.',
     url: 'https://elitecarecompanion.com/home-care-faq',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Home Care FAQ Atlanta | Elite Care Companion',
+    title: 'Care for Men FAQ Atlanta | Elite Care Companion',
     description: 'Frequently asked questions about home care services in Atlanta. Expert answers from Elite Care Companion.',
   }
 };
@@ -33,7 +33,7 @@ export default function HomeCareFAQ() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Questions &amp; Answers</div>
-          <h1>Home Care Questions &amp; Answers</h1>
+          <h1>Care for Men — Questions &amp; Answers</h1>
           <p>Expert answers to the most common questions about home care services in Atlanta &mdash; from cost and getting started to safety and caregiver qualifications.</p>
           <div className="hero-actions">
             <a className="btn btn-gold" href="#contact">Request a free call</a>
@@ -197,7 +197,7 @@ export default function HomeCareFAQ() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation about your home care questions.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am &ndash; 8pm, 7 days</div>

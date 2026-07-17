@@ -6,11 +6,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: '24-Hour Home Care Services Atlanta | Elite Care Companion | Round-the-Clock Care',
+  title: '24-Hour & Overnight Care for Older Men in Atlanta | Elite Care Companion | Round-the-Clock Care',
   description: 'Professional 24-hour live-in home care in Atlanta. Round-the-clock care for seniors, post-surgery recovery, and dementia patients. Experienced caregivers, overnight coverage. Call (470) 696-3850.',
   keywords: '24 hour home care Atlanta, live-in caregiver Atlanta, round the clock care, overnight care Atlanta, 24/7 home care, night shift caregiver, live-in companion Atlanta, 24 hour elderly care, full time home care Atlanta, residential care Atlanta',
   openGraph: {
-    title: '24-Hour Home Care Services Atlanta | Elite Care Companion',
+    title: '24-Hour & Overnight Care for Older Men in Atlanta | Elite Care Companion',
     description: 'Professional 24-hour live-in home care throughout Atlanta metro. Experienced caregivers provide round-the-clock support, safety, and companionship.',
     url: 'https://elitecarecompanion.com/24-hour-care',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '24-Hour Home Care Services Atlanta | Elite Care Companion',
+    title: '24-Hour & Overnight Care for Older Men in Atlanta | Elite Care Companion',
     description: 'Professional 24-hour live-in home care in Atlanta. Round-the-clock coverage available. Call (470) 696-3850.',
   }
 };
@@ -32,8 +32,8 @@ export default function TwentyFourHourCare() {
 
       <header className="page-hero">
         <div className="inner">
-          <div className="k">24-Hour Care in Atlanta</div>
-          <h1>24-Hour Live-In Home Care</h1>
+          <div className="k">24-Hour & Overnight · Metro Atlanta</div>
+          <h1>24-Hour &amp; Overnight Care for Men</h1>
           <p>
             Round-the-clock professional care in the comfort of home. Experienced live-in caregivers
             providing continuous support, safety, and companionship throughout Atlanta.
@@ -264,7 +264,7 @@ export default function TwentyFourHourCare() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am – 8pm, 7 days</div>

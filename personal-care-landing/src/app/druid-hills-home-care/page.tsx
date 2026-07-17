@@ -7,11 +7,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Druid Hills Home Care Services | Elite Care Companion | Historic Garden District',
+  title: 'In-Home Care for Older Men in Druid Hills | Elite Care Companion | Historic Garden District',
   description: 'Professional home care in historic Druid Hills, GA. Serving Fernbank area, Emory University neighborhoods, Lullwater Park vicinity. Expert care for historic homes and established families. Call (470) 696-3850.',
   keywords: 'Druid Hills home care, Fernbank home care, Emory Druid Hills senior care, historic Druid Hills eldercare, Lullwater Park area care, Druid Hills caregiver, elderly care Druid Hills GA, Druid Hills companion care, senior home care Druid Hills, Druid Hills dementia care',
   openGraph: {
-    title: 'Druid Hills Home Care Services | Elite Care Companion',
+    title: 'In-Home Care for Older Men in Druid Hills | Elite Care Companion',
     description: 'Trusted home care in historic Druid Hills garden district. Serving families near Fernbank, Emory, and Lullwater Park with compassionate, professional care.',
     url: 'https://elitecarecompanion.com/druid-hills-home-care',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Druid Hills Home Care Services | Elite Care Companion',
+    title: 'In-Home Care for Older Men in Druid Hills | Elite Care Companion',
     description: 'Professional home care in historic Druid Hills, GA. Compassionate, private-pay care for established families. Call (470) 696-3850.',
   }
 };
@@ -34,7 +34,7 @@ export default function DruidHillsHomeCare() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Home Care · Druid Hills</div>
-          <h1>Druid Hills Historic Garden District Home Care</h1>
+          <h1>In-Home Care for Older Men in Druid Hills</h1>
           <p>
             Specialized care for families in Atlanta&apos;s most historic neighborhood &mdash; from Fernbank
             to Lullwater Park, serving established families with dignity and respect.
@@ -385,7 +385,7 @@ export default function DruidHillsHomeCare() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am &ndash; 8pm, 7 days</div>

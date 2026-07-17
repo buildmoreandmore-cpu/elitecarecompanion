@@ -7,11 +7,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Brookhaven Home Care Services | Elite Care Companion | Near Emory & CDC',
+  title: 'In-Home Care for Older Men in Brookhaven | Elite Care Companion | Near Emory & CDC',
   description: 'Professional home care services in Brookhaven, GA. Serving Town Brookhaven, Emory University area, CDC neighborhoods. 24/7 care, dementia specialists, companion care. Call (470) 696-3850.',
   keywords: 'Brookhaven home care, Emory University home care, CDC area eldercare, Town Brookhaven senior care, Brookhaven personal care, home health aide Brookhaven, elderly care Brookhaven GA, Brookhaven caregiver services, senior companion Brookhaven, Brookhaven dementia care',
   openGraph: {
-    title: 'Brookhaven Home Care Services | Elite Care Companion',
+    title: 'In-Home Care for Older Men in Brookhaven | Elite Care Companion',
     description: 'Trusted home care services in Brookhaven, GA. Serving families near Emory University, CDC, and Town Brookhaven with compassionate, professional care.',
     url: 'https://elitecarecompanion.com/brookhaven-home-care',
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brookhaven Home Care Services | Elite Care Companion',
+    title: 'In-Home Care for Older Men in Brookhaven | Elite Care Companion',
     description: 'Professional home care in Brookhaven, GA. Care available 24/7. Call (470) 696-3850.',
   }
 };
@@ -34,7 +34,7 @@ export default function BrookhavenHomeCare() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Home Care · Brookhaven</div>
-          <h1>Professional Home Care in Brookhaven</h1>
+          <h1>In-Home Care for Older Men in Brookhaven</h1>
           <p>Serving families near Emory University, the CDC, Town Brookhaven, and historic neighborhoods with compassionate, personalized care.</p>
           <div className="hero-actions">
             <a className="btn btn-gold" href="#contact">Request a free call</a>
@@ -264,7 +264,7 @@ export default function BrookhavenHomeCare() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am – 8pm, 7 days</div>

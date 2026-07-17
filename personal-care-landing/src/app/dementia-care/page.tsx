@@ -6,7 +6,7 @@ import Reveal from '@/components/Reveal';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Dementia Care & Alzheimer\'s Support in Atlanta GA - Memory Care at Home | Elite Care Companion',
+  title: 'Dementia & Alzheimer\'s Care for Men in Atlanta GA | Elite Care Companion',
   description: 'Specialized dementia and Alzheimer\'s care in Atlanta. Memory care at home in Buckhead, Sandy Springs, Brookhaven. Trained caregivers, safety protocols, 24/7 support. Call (470) 696-3850.',
   keywords: 'dementia care Atlanta, Alzheimer\'s care Georgia, memory care at home Atlanta, dementia caregiver Atlanta, Alzheimer\'s support Georgia, dementia care Buckhead, memory care Sandy Springs, dementia care Brookhaven, Alzheimer\'s care Alpharetta, dementia care Druid Hills, memory care services Atlanta, dementia home care Georgia, Alzheimer\'s home care Atlanta, dementia care near me, memory care specialist Atlanta, dementia respite care Atlanta, Alzheimer\'s caregiver Georgia, dementia safety Atlanta, memory care support Atlanta, dementia care cost Atlanta, Alzheimer\'s care cost Georgia, dementia day care Atlanta, memory care programs Atlanta, dementia activities Atlanta, Alzheimer\'s activities Georgia, dementia behavior management Atlanta, memory care nutrition Atlanta, dementia wandering prevention Atlanta, Alzheimer\'s sundowning care Georgia, dementia medication management Atlanta'
 };
@@ -20,7 +20,7 @@ export default function DementiaCare() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Memory Care at Home</div>
-          <h1>Specialized Dementia &amp; Alzheimer&apos;s Care</h1>
+          <h1>Dementia &amp; Alzheimer&apos;s Care for Men</h1>
           <p>Compassionate memory care at home throughout the Atlanta metro &mdash; Buckhead, Sandy Springs, Brookhaven, Druid Hills, and Alpharetta.</p>
           <div className="hero-actions">
             <a className="btn btn-gold" href="#contact">Request a free call</a>
@@ -278,7 +278,7 @@ export default function DementiaCare() {
 
       <section className="bigcta" id="contact">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation about specialized memory care.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am &ndash; 8pm, 7 days</div>

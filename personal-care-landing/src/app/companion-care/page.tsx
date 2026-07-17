@@ -6,11 +6,11 @@ import ContactForm from '@/components/ContactForm';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Companion Care Services Atlanta | Elite Care Companion | Senior Companionship',
+  title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion | Senior Companionship',
   description: 'Professional companion care services in Atlanta. Social interaction, light housekeeping, transportation, and emotional support for seniors. Reduce isolation, maintain independence. Call (470) 696-3850.',
   keywords: 'companion care Atlanta, senior companion Atlanta, elderly companionship, senior social support Atlanta, companion caregiver, social isolation seniors, senior friendship, companion services Atlanta, elderly companion care, senior companion services',
   openGraph: {
-    title: 'Companion Care Services Atlanta | Elite Care Companion',
+    title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion',
     description: 'Professional companion care throughout Atlanta metro. Reduce isolation, maintain independence, and enhance quality of life for seniors with caring companionship.',
     url: 'https://elitecarecompanion.com/companion-care',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Companion Care Services Atlanta | Elite Care Companion',
+    title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion',
     description: 'Professional companion care in Atlanta. Social support and friendship for seniors. Call (470) 696-3850.',
   }
 };
@@ -32,8 +32,8 @@ export default function CompanionCare() {
 
       <header className="page-hero">
         <div className="inner">
-          <div className="k">Companion Care in Atlanta</div>
-          <h1>Professional Companion Care</h1>
+          <div className="k">Company & Errands · Metro Atlanta</div>
+          <h1>Company &amp; Errands for Older Men</h1>
           <p>
             Meaningful friendship, social engagement, and emotional support to enhance quality of
             life and reduce isolation for Atlanta seniors.
@@ -355,7 +355,7 @@ export default function CompanionCare() {
 
       <section className="bigcta">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am – 8pm, 7 days</div>

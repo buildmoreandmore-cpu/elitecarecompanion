@@ -6,7 +6,7 @@ import Reveal from '@/components/Reveal';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Home Care Services in Sandy Springs GA - Near Perimeter Mall & City Springs | Elite Care Companion',
+  title: 'In-Home Care for Older Men in Sandy Springs, GA | Elite Care Companion',
   description: 'Professional home care in Sandy Springs, Georgia. Serving Perimeter Mall, City Springs, Dunwoody, Abernathy Square. 24/7 care, transportation, companionship. Call (470) 696-3850 today.',
   keywords: 'home care Sandy Springs, senior care Perimeter Mall, elderly care City Springs, Sandy Springs Georgia home care, Dunwoody home care, Abernathy Square senior care, private caregiver Sandy Springs, 24 hour care Sandy Springs, dementia care Sandy Springs GA, companion care Sandy Springs, weekend caregiver Sandy Springs, live-in care Sandy Springs, respite care Sandy Springs, Sandy Springs senior services, home health aide Sandy Springs, personal care Sandy Springs Georgia, medication reminders Sandy Springs, transportation Sandy Springs, meal preparation Sandy Springs'
 };
@@ -20,7 +20,7 @@ export default function SandySpringsHomeCare() {
       <header className="page-hero">
         <div className="inner">
           <div className="k">Home Care · Sandy Springs</div>
-          <h1>Home Care Services in Sandy Springs, Georgia</h1>
+          <h1>In-Home Care for Older Men in Sandy Springs</h1>
           <p>Serving Perimeter Mall, City Springs, Dunwoody &amp; the North Fulton area with comprehensive care that keeps you connected to community and routine.</p>
           <div className="hero-actions">
             <a className="btn btn-gold" href="#contact">Request a free call</a>
@@ -208,7 +208,7 @@ export default function SandySpringsHomeCare() {
 
       <section className="bigcta" id="contact">
         <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
+          <h2>Let&apos;s talk about the care he needs</h2>
           <p>A friendly, no-pressure conversation.</p>
           <a className="num" href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
           <div className="hrs">Open 8am – 8pm, 7 days</div>

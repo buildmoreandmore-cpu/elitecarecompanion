@@ -1,9 +1,8 @@
-import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
-import { PHONE_DISPLAY, PHONE_TEL, HOURS, SERVICE_AREAS } from "@/lib/site";
+import { PHONE_DISPLAY, PHONE_TEL, HOURS } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -15,243 +14,285 @@ export default function Home() {
       <Reveal />
 
       {/* hero */}
-      <header className="hero" id="top">
+      <div className="hero" id="top">
         <div className="wrap">
           <div>
-            <span className="eyebrow">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.4 12 21 12 21Z" />
-              </svg>
-              Trusted care for someone you love
-            </span>
-            <h1>
-              Gentle, dependable care for your loved one — <em>right at home.</em>
+            <div className="label rise">Male caregivers · Built for the job</div>
+            <h1 className="rise d1">
+              He won&apos;t accept help.
+              <span className="line2">He might accept this.</span>
             </h1>
-            <p className="sub">
-              When the person who always cared for you needs care themselves,
-              we&apos;re here to help — with kindness, patience, and people you can
-              trust.
+            <p className="sub rise d2">
+              Strong, experienced male caregivers for older men in metro Atlanta.
+              Lifting, transfers, daily routines — and company that doesn&apos;t
+              feel like babysitting.
             </p>
-            <div className="hero-actions">
-              <a className="btn btn-gold" href="#form">
-                Request a free call
+            <div className="cta-row rise d3">
+              <a className="btn" href="#form">
+                Request a call back
               </a>
-              <a className="btn btn-wire" href="#services">
-                See how we help
+              <a className="btn ghost" href="#how">
+                See how it works
               </a>
             </div>
-            <div className="hero-call">
-              <a className="num" href={`tel:${PHONE_TEL}`}>
-                {PHONE_DISPLAY}
-              </a>
-              <span className="small">
-                Prefer to talk?
-                <br />
-                Call us — we answer.
-              </span>
-            </div>
+            <p className="phone-note rise d3">
+              Prefer to talk? <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a> — a
+              real person answers.
+            </p>
           </div>
 
-          <ContactForm />
-        </div>
-      </header>
-
-      {/* trust strip */}
-      <div className="trust">
-        <div className="row">
-          <div className="item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.4 12 21 12 21Z" />
-            </svg>{" "}
-            Locally owned in metro Atlanta
-          </div>
-          <div className="item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M9 12l2 2 4-4" />
-              <circle cx="12" cy="12" r="9" />
-            </svg>{" "}
-            Simple private pay — no contracts
-          </div>
-          <div className="item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6" />
-            </svg>{" "}
-            Caring, experienced caregivers
+          <div className="rise d2">
+            <ContactForm />
           </div>
         </div>
       </div>
 
-      {/* services */}
-      <section className="sec" id="services">
+      {/* capability plate — straddles the hero seam */}
+      <div className="plate-section">
         <div className="wrap">
-          <div className="sec-head rv">
-            <div className="k">How we help</div>
-            <h2>Care that fits your family&apos;s life</h2>
+          <div className="plate">
+            <span className="rivet-b" />
+            <div className="plate-head">
+              What our caregivers are equipped to handle
+            </div>
+            <div className="plate-grid">
+              <div className="plate-item">
+                <h3>Lifts &amp; transfers</h3>
+                <p>
+                  Bed to chair, chair to car — done safely by caregivers strong
+                  enough to do it right.
+                </p>
+              </div>
+              <div className="plate-item">
+                <h3>Stand-by assist</h3>
+                <p>
+                  Steady support in the shower, on stairs, and anywhere balance
+                  gets uncertain.
+                </p>
+              </div>
+              <div className="plate-item">
+                <h3>Wheelchair &amp; walker</h3>
+                <p>
+                  Confident help with mobility equipment, at home and out in the
+                  world.
+                </p>
+              </div>
+              <div className="plate-item">
+                <h3>Fall response</h3>
+                <p>
+                  If he goes down, his caregiver can help him up — safely, without
+                  making it an emergency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* he says he's fine */}
+      <section className="fine-section">
+        <div className="wrap fine-grid">
+          <div className="photo tall has-img rv">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/caregiver-porch.png"
+              alt="A male caregiver walking an older man down his porch steps to the truck, mid-conversation and at ease"
+            />
+          </div>
+          <div className="fine-copy rv">
+            <blockquote>
+              &ldquo;He keeps saying he&apos;s fine. He&apos;s not fine. But he
+              won&apos;t let anyone help him.&rdquo;
+              <footer>— Every daughter and wife who calls us</footer>
+            </blockquote>
             <p>
-              Whatever your loved one needs, we make it simple — and we treat them
-              like our own.
+              <strong>He&apos;s not being stubborn — he&apos;s protecting his
+              dignity.</strong>{" "}
+              He doesn&apos;t want a stranger in his house. He doesn&apos;t want to
+              be handled. And he definitely doesn&apos;t want to feel like
+              someone&apos;s patient.
+            </p>
+            <p>
+              That&apos;s why our caregivers for men are men — matched to his pace
+              and his interests. Someone who can talk shop, watch the game, drive
+              him where he needs to go, and handle the physical work without making
+              a thing of it.
+            </p>
+            <p>
+              Most men who said &ldquo;absolutely not&rdquo; to care say yes to
+              this. Because it doesn&apos;t feel like care. It feels like having a
+              capable guy around.
             </p>
           </div>
-          <div className="svc-grid">
-            <div className="svc rv">
-              <div className="ic">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-                  <path d="M3 12a9 9 0 0 0 9 9 7 7 0 0 1-2-13.5A9 9 0 0 0 3 12Z" />
-                </svg>
-              </div>
-              <h3>Overnight Care</h3>
+        </div>
+      </section>
+
+      {/* services */}
+      <section className="services">
+        <div className="wrap">
+          <div className="label">What we do</div>
+          <h2>Three ways we show up.</h2>
+          <div className="cards">
+            <div className="card rv">
+              <div className="tag">The heavy work</div>
+              <h3>Lifting &amp; mobility</h3>
               <p>
-                Restful nights for everyone. A caregiver stays through the night so
-                your loved one is safe and you can sleep.
+                The physical help most agencies can&apos;t safely provide. Our
+                caregivers are selected for strength and trained to use it
+                carefully.
               </p>
+              <ul>
+                <li>Transfers: bed, chair, car, toilet</li>
+                <li>Shower and stair support</li>
+                <li>Help up after a fall</li>
+              </ul>
             </div>
-            <div className="svc rv">
-              <div className="ic">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                  <circle cx="4" cy="12" r="1.6" fill="currentColor" stroke="none" />
-                </svg>
-              </div>
-              <h3>Travel Companion</h3>
+            <div className="card rv">
+              <div className="tag">The daily routine</div>
+              <h3>Personal care</h3>
               <p>
-                Going to see family or a doctor out of town? We travel alongside your
-                loved one, handling the details with care.
+                Bathing, dressing, meals, medication reminders — handled
+                man-to-man, matter-of-factly, with his privacy respected.
               </p>
+              <ul>
+                <li>Morning and evening routines</li>
+                <li>Meals he&apos;ll actually eat</li>
+                <li>Medication reminders</li>
+              </ul>
             </div>
-            <div className="svc rv">
-              <div className="ic">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-                  <circle cx="12" cy="7" r="3.4" />
-                  <path d="M5 21c1.4-4.4 4.6-6.5 7-6.5s5.6 2.1 7 6.5" />
-                </svg>
-              </div>
-              <h3>Daily Personal Care</h3>
+            <div className="card rv">
+              <div className="tag">The good part</div>
+              <h3>Company &amp; errands</h3>
               <p>
-                Bathing, dressing, meals, medication reminders, and gentle
-                companionship — help with the everyday, done with dignity.
+                Not babysitting. A capable guy to ride shotgun — errands,
+                appointments, the barbershop, the game on Saturday.
               </p>
+              <ul>
+                <li>Drives and appointments</li>
+                <li>Errands and the hardware store</li>
+                <li>Conversation worth having</li>
+              </ul>
             </div>
+          </div>
+          <div className="photo wide rv">
+            <span>
+              Photo: caregiver and client in the garage or workshop, working on
+              something together — or side by side at a diner counter. Candid over
+              posed.
+            </span>
           </div>
         </div>
       </section>
 
-      {/* why */}
-      <section className="sec alt">
-        <div className="wrap">
-          <div className="sec-head rv">
-            <div className="k">Why families choose us</div>
-            <h2>Care you can feel good about</h2>
-          </div>
-          <div className="why-grid">
-            {[
-              {
-                h: "Real people, not a call center",
-                p: "When you call, you reach a caring person who listens — not a machine or a menu.",
-              },
-              {
-                h: "Simple, private pay",
-                p: "No red tape. Clear, honest pricing you'll understand before anything begins.",
-              },
-              {
-                h: "Carefully chosen caregivers",
-                p: "Experienced, background-checked, and matched to your loved one's personality and needs.",
-              },
-              {
-                h: "Right here in your community",
-                p: "Locally owned and serving metro Atlanta — we know the area because it's home for us too.",
-              },
-            ].map((w) => (
-              <div className="why rv" key={w.h}>
-                <div className="ck">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                    <path d="M5 12l4 4 10-10" />
-                  </svg>
-                </div>
-                <div>
-                  <h3>{w.h}</h3>
-                  <p>{w.p}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* how it works */}
-      <section className="sec">
-        <div className="wrap">
-          <div className="sec-head rv">
-            <div className="k">Getting started is easy</div>
-            <h2>Three simple steps</h2>
-          </div>
-          <div className="steps">
-            <div className="stp rv">
-              <div className="n">1</div>
-              <h3>Call or fill the form</h3>
-              <p>Reach out however is easiest for you. There&apos;s no cost to ask.</p>
-            </div>
-            <div className="stp rv">
-              <div className="n">2</div>
-              <h3>We listen</h3>
-              <p>
-                We learn about your loved one and answer all of your questions,
-                gently and clearly.
-              </p>
-            </div>
-            <div className="stp rv">
-              <div className="n">3</div>
-              <h3>Care begins</h3>
-              <p>
-                We match a caregiver and start on a schedule that works for your
-                family.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* areas */}
-      <section className="sec alt areas">
-        <div className="wrap">
-          <div className="sec-head rv" style={{ marginBottom: 10 }}>
-            <div className="k">Where we serve</div>
-            <h2>Proudly caring for families across metro Atlanta</h2>
-          </div>
-          <div className="area-list rv">
-            {SERVICE_AREAS.map((a) => (
-              <Link className="area" href={`/${a.slug}`} key={a.slug}>
-                {a.name}
-              </Link>
-            ))}
-          </div>
-          <p className="more rv">
-            …and the surrounding communities. Not sure if we cover your area? Just
-            give us a call — we&apos;re happy to help.
-          </p>
-        </div>
-      </section>
-
-      {/* big CTA */}
-      <section className="bigcta" id="contact">
-        <div className="wrap">
-          <h2>Let&apos;s talk about your loved one&apos;s care</h2>
-          <p>
-            A friendly, no-pressure conversation. We&apos;re here to help you find the
-            right path forward.
-          </p>
-          <a className="num" href={`tel:${PHONE_TEL}`}>
-            {PHONE_DISPLAY}
-          </a>
-          <div className="hrs">Open {HOURS}</div>
+      {/* matching */}
+      <section className="match">
+        <div className="wrap match-grid">
           <div>
-            <a className="btn btn-gold" href="#form">
+            <div className="label">The match matters</div>
+            <h2>We don&apos;t send a caregiver. We send the right one.</h2>
+            <p className="lede">
+              The reason this works isn&apos;t the service list — it&apos;s the man
+              who shows up.
+            </p>
+          </div>
+          <div>
+            <div className="match-item rv">
+              <div className="k">Matched to him</div>
+              <p>
+                Veteran? Ball fan? Worked with his hands his whole life? We match
+                caregivers by personality and interests, not just availability.
+              </p>
+            </div>
+            <div className="match-item rv">
+              <div className="k">Same face, every time</div>
+              <p>
+                One consistent caregiver — not a rotation of strangers. Trust is
+                built by showing up.
+              </p>
+            </div>
+            <div className="match-item rv">
+              <div className="k">Fully vetted</div>
+              <p>
+                Background-checked, experienced, and personally interviewed by our
+                team before they ever meet your family.
+              </p>
+            </div>
+            <div className="match-item rv">
+              <div className="k">Private pay, no contracts</div>
+              <p>
+                Clear pricing before anything begins. Start, adjust, or stop on
+                your schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* steps */}
+      <section className="steps" id="how">
+        <div className="wrap">
+          <div className="label">Getting started</div>
+          <h2>Three steps. No paperwork maze.</h2>
+          <div className="step-grid">
+            <div className="step rv">
+              <div className="n">STEP 1</div>
+              <h3>You call us</h3>
+              <p>
+                Or fill the form. You&apos;ll talk to a real person who&apos;s had
+                this exact conversation many times.
+              </p>
+            </div>
+            <div className="step rv">
+              <div className="n">STEP 2</div>
+              <h3>We meet him</h3>
+              <p>
+                A low-key visit — no clipboard interrogation. We learn what he
+                needs and what he&apos;ll actually accept.
+              </p>
+            </div>
+            <div className="step rv">
+              <div className="n">STEP 3</div>
+              <h3>The right guy shows up</h3>
+              <p>
+                Care starts on a schedule that works, with a caregiver picked for
+                him specifically.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* areas + cta */}
+      <section className="cta" id="contact">
+        <div className="wrap">
+          <div>
+            <div className="label">Metro Atlanta</div>
+            <h2>Start with one conversation.</h2>
+            <p className="lede">
+              Tell us what&apos;s going on. We&apos;ll tell you honestly whether we
+              can help.
+            </p>
+            <p className="areas">
+              Serving{" "}
+              <b>
+                Buckhead · Sandy Springs · Brookhaven · Druid Hills · Alpharetta
+              </b>{" "}
+              and surrounding communities.
+            </p>
+          </div>
+          <div className="cta-box">
+            <a className="phone-big" href={`tel:${PHONE_TEL}`}>
+              {PHONE_DISPLAY}
+            </a>
+            <p className="hours">Open {HOURS}</p>
+            <a className="btn dark" href="#form">
               Or request a call online
             </a>
           </div>
         </div>
       </section>
 
+      <div className="brass-rule" />
       <SiteFooter />
     </div>
   );
