@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'In-Home Care for Older Men in Buckhead, Atlanta | Elite Care Companion',
-  description: 'Professional home care services in Buckhead, Atlanta. Serving Phipps Plaza, Lenox Square, Buckhead Village. Personal care, companionship, 24/7 care. Call (470) 507-8812 for same-day service.',
+  description: 'Professional home care services in Buckhead, Atlanta. Serving Phipps Plaza, Lenox Square, Buckhead Village. Personal care, companionship, 24/7 care. Call (470) 840-0575 for same-day service.',
   keywords: 'home care Buckhead, senior care Phipps Plaza, elderly care Lenox Square, Buckhead Village home care, private caregiver Buckhead Atlanta, live-in care Buckhead, 24 hour care Buckhead, dementia care Buckhead, post surgery care Buckhead, companion care Buckhead, weekend caregiver Buckhead, overnight care Buckhead, respite care Buckhead, Buckhead senior services, home health aide Buckhead, personal care Buckhead Atlanta, medication reminders Buckhead, transportation services Buckhead, meal preparation Buckhead',
 };
 

@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
             </div>
           </div>
           <div style="text-align: center; padding: 18px 0; color: #51605F; font-size: 12px;">
-            <p>Elite Care Companion · Metro Atlanta · (470) 507-8812</p>
+            <p>Elite Care Companion · Metro Atlanta · (470) 840-0575</p>
           </div>
         </div>
       `,

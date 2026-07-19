@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'In-Home Care for Older Men in Sandy Springs, GA | Elite Care Companion',
-  description: 'Professional home care in Sandy Springs, Georgia. Serving Perimeter Mall, City Springs, Dunwoody, Abernathy Square. 24/7 care, transportation, companionship. Call (470) 507-8812 today.',
+  description: 'Professional home care in Sandy Springs, Georgia. Serving Perimeter Mall, City Springs, Dunwoody, Abernathy Square. 24/7 care, transportation, companionship. Call (470) 840-0575 today.',
   keywords: 'home care Sandy Springs, senior care Perimeter Mall, elderly care City Springs, Sandy Springs Georgia home care, Dunwoody home care, Abernathy Square senior care, private caregiver Sandy Springs, 24 hour care Sandy Springs, dementia care Sandy Springs GA, companion care Sandy Springs, weekend caregiver Sandy Springs, live-in care Sandy Springs, respite care Sandy Springs, Sandy Springs senior services, home health aide Sandy Springs, personal care Sandy Springs Georgia, medication reminders Sandy Springs, transportation Sandy Springs, meal preparation Sandy Springs'
 };
 

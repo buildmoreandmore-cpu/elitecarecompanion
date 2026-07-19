@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import {
   COOKIE_NAME,
@@ -173,4 +174,64 @@ export async function toggleInvoiced(formData: FormData) {
   if (!id) return;
   await prisma.timeEntry.update({ where: { id }, data: { invoiced } });
   revalidatePath("/portal/time");
+}
+
+// ---------- family intake invite ----------
+export async function sendIntakeInvite(formData: FormData) {
+  const familyName = str(formData.get("familyName"));
+  const familyEmail = str(formData.get("familyEmail"));
+  if (!familyName || !familyEmail) {
+    redirect("/portal/intake?error=1");
+  }
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    redirect("/portal/intake?error=1");
+  }
+
+  const formUrl = "https://www.elitecarecompanion.com/family-intake";
+  const resend = new Resend(apiKey);
+
+  try {
+    const { error } = await resend.emails.send({
+      from: "Elite Care · For Men <noreply@elitecarecompanion.com>",
+      to: [familyEmail as string],
+      subject: "A quick form to help us get to know him",
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 20px; background-color: #FBF7F0; border-radius: 8px;">
+          <div style="background-color: #1C4A57; color: white; padding: 22px; text-align: center; border-radius: 12px 12px 0 0;">
+            <h1 style="margin: 0; font-size: 20px;">Elite Care Companion</h1>
+          </div>
+          <div style="background-color: #FFFDF8; padding: 28px; border-radius: 0 0 12px 12px; color: #51605F; line-height: 1.6;">
+            <p>Hi ${familyName},</p>
+            <p>
+              Thank you for reaching out. Before we talk next steps, it helps to get to know him
+              a little — his care needs, his routines, and the things that make him who he is.
+            </p>
+            <p style="text-align: center; margin: 26px 0;">
+              <a href="${formUrl}" style="background-color: #B07F1E; color: #fff; text-decoration: none; font-weight: bold; padding: 14px 28px; border-radius: 100px; display: inline-block;">
+                Complete his intake form
+              </a>
+            </p>
+            <p>
+              It takes a few minutes — answer what you can, and we&apos;ll go over the rest
+              together. This is private-pay care; Elite Care Companion does not bill Medicare,
+              Medicaid, or private insurance.
+            </p>
+            <p>Talk soon,<br />Elite Care Companion</p>
+          </div>
+        </div>
+      `,
+    });
+    if (error) {
+      console.error("Resend error:", error);
+      redirect("/portal/intake?error=1");
+    }
+  } catch (err) {
+    console.error("sendIntakeInvite failed:", err);
+    redirect("/portal/intake?error=1");
+  }
+
+  revalidatePath("/portal/intake");
+  redirect("/portal/intake?sent=1");
 }

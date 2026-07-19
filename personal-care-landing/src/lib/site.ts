@@ -1,9 +1,9 @@
 // Brand-label vanity phone: the site never shows the raw digits, only this
-// label. tel: links use PHONE_TEL so calls actually connect to 470-507-8812.
+// label. tel: links use PHONE_TEL so calls actually connect to 470-840-0575.
 export const PHONE_DISPLAY = "(470) ELITE-4-MEN";
-export const PHONE_TEL = "+14705078812";
+export const PHONE_TEL = "+14708400575";
 // Real dialable number for functional/SEO contexts (meta descriptions, PDFs).
-export const PHONE_REAL = "(470) 507-8812";
+export const PHONE_REAL = "(470) 840-0575";
 export const EMAIL = "elitecarecompanionllc@gmail.com";
 export const HOURS = "8am – 8pm, 7 days";
 

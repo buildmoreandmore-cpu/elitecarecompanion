@@ -8,7 +8,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Care for Older Men Near Atlanta Landmarks | Elite Care Companion | Phipps Plaza, Emory, Lenox',
-  description: 'Home care services near major Atlanta landmarks. Phipps Plaza, Emory Hospital, Lenox Square, Perimeter Mall, Atlanta Botanical Garden. Local home care experts. Call (470) 507-8812.',
+  description: 'Home care services near major Atlanta landmarks. Phipps Plaza, Emory Hospital, Lenox Square, Perimeter Mall, Atlanta Botanical Garden. Local home care experts. Call (470) 840-0575.',
   keywords: 'home care near Phipps Plaza, home care near Emory Hospital, home care near Lenox Square, home care near Perimeter Mall, home care near Northside Hospital, home care near Atlanta Botanical Garden, home care near Fernbank Museum, home care near Town Brookhaven',
   openGraph: {
     title: 'Care for Older Men Near Atlanta Landmarks | Elite Care Companion',

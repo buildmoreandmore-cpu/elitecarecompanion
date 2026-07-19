@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion | Senior Companionship',
-  description: 'Professional companion care services in Atlanta. Social interaction, light housekeeping, transportation, and emotional support for seniors. Reduce isolation, maintain independence. Call (470) 507-8812.',
+  description: 'Professional companion care services in Atlanta. Social interaction, light housekeeping, transportation, and emotional support for seniors. Reduce isolation, maintain independence. Call (470) 840-0575.',
   keywords: 'companion care Atlanta, senior companion Atlanta, elderly companionship, senior social support Atlanta, companion caregiver, social isolation seniors, senior friendship, companion services Atlanta, elderly companion care, senior companion services',
   openGraph: {
     title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Company & Errands for Older Men in Atlanta | Elite Care Companion',
-    description: 'Professional companion care in Atlanta. Social support and friendship for seniors. Call (470) 507-8812.',
+    description: 'Professional companion care in Atlanta. Social support and friendship for seniors. Call (470) 840-0575.',
   }
 };
 

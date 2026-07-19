@@ -7,7 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Care for Men FAQ Atlanta | Elite Care Companion | Common Questions & Answers',
-  description: 'Frequently asked questions about home care in Atlanta. Cost, safety, caregiver qualifications, and more. Get expert answers from Elite Care Companion. Call (470) 507-8812.',
+  description: 'Frequently asked questions about home care in Atlanta. Cost, safety, caregiver qualifications, and more. Get expert answers from Elite Care Companion. Call (470) 840-0575.',
   keywords: 'home care FAQ Atlanta, home care questions, home care cost Atlanta, caregiver background check, home care safety, how much does home care cost, private home care Atlanta',
   openGraph: {
     title: 'Care for Men FAQ Atlanta | Elite Care Companion',

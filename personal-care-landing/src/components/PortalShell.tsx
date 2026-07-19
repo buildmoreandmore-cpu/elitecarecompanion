@@ -5,13 +5,14 @@ const LINKS = [
   { href: "/portal", label: "Dashboard", key: "dashboard" },
   { href: "/portal/clients", label: "Clients", key: "clients" },
   { href: "/portal/time", label: "Hours & Invoices", key: "time" },
+  { href: "/portal/intake", label: "Family Intake", key: "intake" },
 ];
 
 export default function PortalShell({
   active,
   children,
 }: {
-  active?: "dashboard" | "clients" | "time";
+  active?: "dashboard" | "clients" | "time" | "intake";
   children: React.ReactNode;
 }) {
   return (

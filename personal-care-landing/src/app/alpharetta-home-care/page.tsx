@@ -8,7 +8,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'In-Home Care for Older Men in Alpharetta | Elite Care Companion | North Fulton Senior Care',
-  description: 'Professional home care services in Alpharetta, GA. Serving Avalon, North Point, and gated communities. Corporate family specialists, modern home care solutions. Call (470) 507-8812.',
+  description: 'Professional home care services in Alpharetta, GA. Serving Avalon, North Point, and gated communities. Corporate family specialists, modern home care solutions. Call (470) 840-0575.',
   keywords: 'Alpharetta home care, Avalon home care, North Point senior care, Alpharetta elder care, North Fulton home care, Alpharetta caregiver, elderly care Alpharetta GA, Alpharetta companion care, senior care Alpharetta, Alpharetta dementia care',
   openGraph: {
     title: 'In-Home Care for Older Men in Alpharetta | Elite Care Companion',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'In-Home Care for Older Men in Alpharetta | Elite Care Companion',
-    description: 'Professional home care in Alpharetta, GA. Compassionate, private-pay care for North Fulton families. Call (470) 507-8812.',
+    description: 'Professional home care in Alpharetta, GA. Compassionate, private-pay care for North Fulton families. Call (470) 840-0575.',
   }
 };
 
