@@ -8,11 +8,11 @@ import {
 } from "@react-pdf/renderer";
 import { usd, fmtDate } from "@/lib/format";
 
-const TEAL = "#1C4A57";
-const GOLD = "#B07F1E";
-const INK = "#1E2A2A";
-const MUTED = "#51605F";
-const LINE = "#D9CDB6";
+const TEAL = "#131519";
+const GOLD = "#2247DF";
+const INK = "#131519";
+const MUTED = "#565E68";
+const LINE = "#DBDEE6";
 
 const BUSINESS = {
   name: "Elite Care Companion",
