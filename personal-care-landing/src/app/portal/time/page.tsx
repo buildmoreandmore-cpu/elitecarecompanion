@@ -6,18 +6,32 @@ import { deleteTimeEntry, toggleInvoiced } from "../actions";
 
 export const dynamic = "force-dynamic";
 
+type TimeEntry = Awaited<ReturnType<typeof prisma.timeEntry.findMany<{ include: { client: true } }>>>;
+type ClientOption = Awaited<
+  ReturnType<typeof prisma.client.findMany<{ select: { id: true; fullName: true } }>>
+>;
+
 export default async function TimePage() {
-  const [entries, clients] = await Promise.all([
-    prisma.timeEntry.findMany({
-      orderBy: { date: "desc" },
-      include: { client: true },
-    }),
-    prisma.client.findMany({
-      where: { active: true },
-      orderBy: { fullName: "asc" },
-      select: { id: true, fullName: true },
-    }),
-  ]);
+  let entries: TimeEntry = [];
+  let clients: ClientOption = [];
+  let dbUnavailable = false;
+
+  try {
+    [entries, clients] = await Promise.all([
+      prisma.timeEntry.findMany({
+        orderBy: { date: "desc" },
+        include: { client: true },
+      }),
+      prisma.client.findMany({
+        where: { active: true },
+        orderBy: { fullName: "asc" },
+        select: { id: true, fullName: true },
+      }),
+    ]);
+  } catch (err) {
+    console.error("Time page: database unavailable", err);
+    dbUnavailable = true;
+  }
 
   const total = entries.reduce((s, e) => s + e.hours * e.rate, 0);
   const unbilled = entries
@@ -32,6 +46,21 @@ export default async function TimePage() {
         Log your hours and rate — the amount owed is calculated for you. Generate an
         invoice PDF to send with your bill.
       </p>
+
+      {dbUnavailable && (
+        <div
+          style={{
+            background: "rgba(19,21,25,.06)",
+            color: "var(--ink)",
+            borderRadius: 10,
+            padding: "14px 16px",
+            fontWeight: 600,
+            marginBottom: 22,
+          }}
+        >
+          Hours data isn&apos;t available right now — the database isn&apos;t connected.
+        </div>
+      )}
 
       <div className="stat-grid">
         <div className="stat">

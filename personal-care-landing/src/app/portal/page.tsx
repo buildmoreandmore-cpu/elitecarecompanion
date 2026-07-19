@@ -5,19 +5,32 @@ import { usd, fmtDate } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
 
+type Entry = Awaited<ReturnType<typeof prisma.timeEntry.findMany<{ include: { client: true } }>>>;
+type Note = Awaited<ReturnType<typeof prisma.caseNote.findMany<{ include: { client: true } }>>>;
+
 export default async function Dashboard() {
-  const [clientCount, entries, recentNotes] = await Promise.all([
-    prisma.client.count({ where: { active: true } }),
-    prisma.timeEntry.findMany({
-      orderBy: { date: "desc" },
-      include: { client: true },
-    }),
-    prisma.caseNote.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 5,
-      include: { client: true },
-    }),
-  ]);
+  let clientCount = 0;
+  let entries: Entry = [];
+  let recentNotes: Note = [];
+  let dbUnavailable = false;
+
+  try {
+    [clientCount, entries, recentNotes] = await Promise.all([
+      prisma.client.count({ where: { active: true } }),
+      prisma.timeEntry.findMany({
+        orderBy: { date: "desc" },
+        include: { client: true },
+      }),
+      prisma.caseNote.findMany({
+        orderBy: { createdAt: "desc" },
+        take: 5,
+        include: { client: true },
+      }),
+    ]);
+  } catch (err) {
+    console.error("Dashboard: database unavailable", err);
+    dbUnavailable = true;
+  }
 
   const totalHours = entries.reduce((s, e) => s + e.hours, 0);
   const outstanding = entries
@@ -29,6 +42,22 @@ export default async function Dashboard() {
     <PortalShell active="dashboard">
       <h1 className="portal-h1">Dashboard</h1>
       <p className="portal-sub">A quick look at your clients, hours, and what&apos;s owed.</p>
+
+      {dbUnavailable && (
+        <div
+          style={{
+            background: "rgba(19,21,25,.06)",
+            color: "var(--ink)",
+            borderRadius: 10,
+            padding: "14px 16px",
+            fontWeight: 600,
+            marginBottom: 22,
+          }}
+        >
+          Client and hours data isn&apos;t available right now. Family Intake still works
+          fine — this only affects Clients, Hours &amp; Invoices.
+        </div>
+      )}
 
       <div className="stat-grid">
         <div className="stat">

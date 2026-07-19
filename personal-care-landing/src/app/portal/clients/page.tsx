@@ -6,11 +6,23 @@ import { createClient } from "../actions";
 
 export const dynamic = "force-dynamic";
 
+type ClientRow = Awaited<
+  ReturnType<typeof prisma.client.findMany<{ include: { _count: { select: { notes: true; timeEntries: true } } } }>>
+>;
+
 export default async function ClientsPage() {
-  const clients = await prisma.client.findMany({
-    orderBy: { fullName: "asc" },
-    include: { _count: { select: { notes: true, timeEntries: true } } },
-  });
+  let clients: ClientRow = [];
+  let dbUnavailable = false;
+
+  try {
+    clients = await prisma.client.findMany({
+      orderBy: { fullName: "asc" },
+      include: { _count: { select: { notes: true, timeEntries: true } } },
+    });
+  } catch (err) {
+    console.error("Clients: database unavailable", err);
+    dbUnavailable = true;
+  }
 
   return (
     <PortalShell active="clients">
@@ -19,6 +31,21 @@ export default async function ClientsPage() {
         Keep each person&apos;s details and case notes in one place. Open a client to
         add notes or export a care record.
       </p>
+
+      {dbUnavailable && (
+        <div
+          style={{
+            background: "rgba(19,21,25,.06)",
+            color: "var(--ink)",
+            borderRadius: 10,
+            padding: "14px 16px",
+            fontWeight: 600,
+            marginBottom: 22,
+          }}
+        >
+          Client data isn&apos;t available right now — the database isn&apos;t connected.
+        </div>
+      )}
 
       <div className="pcard">
         <h2>

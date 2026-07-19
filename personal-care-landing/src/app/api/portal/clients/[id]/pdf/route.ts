@@ -9,10 +9,17 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
-  const client = await prisma.client.findUnique({
-    where: { id },
-    include: { notes: { orderBy: { noteDate: "desc" } } },
-  });
+
+  let client;
+  try {
+    client = await prisma.client.findUnique({
+      where: { id },
+      include: { notes: { orderBy: { noteDate: "desc" } } },
+    });
+  } catch (err) {
+    console.error("Care record PDF: database unavailable", err);
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   if (!client) {
     return NextResponse.json({ error: "Client not found" }, { status: 404 });

@@ -18,13 +18,40 @@ export default async function ClientDetail({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const client = await prisma.client.findUnique({
-    where: { id },
-    include: {
-      notes: { orderBy: { noteDate: "desc" } },
-      timeEntries: { orderBy: { date: "desc" } },
-    },
-  });
+
+  let client;
+  try {
+    client = await prisma.client.findUnique({
+      where: { id },
+      include: {
+        notes: { orderBy: { noteDate: "desc" } },
+        timeEntries: { orderBy: { date: "desc" } },
+      },
+    });
+  } catch (err) {
+    console.error("Client detail: database unavailable", err);
+    return (
+      <PortalShell active="clients">
+        <h1 className="portal-h1">Client unavailable</h1>
+        <div
+          style={{
+            background: "rgba(19,21,25,.06)",
+            color: "var(--ink)",
+            borderRadius: 10,
+            padding: "14px 16px",
+            fontWeight: 600,
+          }}
+        >
+          Client data isn&apos;t available right now — the database isn&apos;t connected.
+        </div>
+        <p className="portal-sub" style={{ marginTop: 18 }}>
+          <Link href="/portal/clients" style={{ color: "var(--gold-d)", fontWeight: 700 }}>
+            ← Back to clients
+          </Link>
+        </p>
+      </PortalShell>
+    );
+  }
 
   if (!client) notFound();
 

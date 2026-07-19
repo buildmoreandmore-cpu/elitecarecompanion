@@ -8,14 +8,20 @@ export async function GET(req: NextRequest) {
   const clientId = req.nextUrl.searchParams.get("clientId") || undefined;
   const scope = req.nextUrl.searchParams.get("scope") || "unbilled";
 
-  const entries = await prisma.timeEntry.findMany({
-    where: {
-      ...(clientId ? { clientId } : {}),
-      ...(scope === "unbilled" ? { invoiced: false } : {}),
-    },
-    orderBy: { date: "asc" },
-    include: { client: true },
-  });
+  let entries;
+  try {
+    entries = await prisma.timeEntry.findMany({
+      where: {
+        ...(clientId ? { clientId } : {}),
+        ...(scope === "unbilled" ? { invoiced: false } : {}),
+      },
+      orderBy: { date: "asc" },
+      include: { client: true },
+    });
+  } catch (err) {
+    console.error("Invoice PDF: database unavailable", err);
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   if (entries.length === 0) {
     return NextResponse.json(
